@@ -1,0 +1,453 @@
+body {
+	background-color: black;
+}
+
+#theVeryTop {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: black;
+	/*max-width: 80%;*/
+}
+
+.videoWrapperWrap {
+	display: flex;
+	justify-content: center;
+}
+
+.videoWrapper {
+	position: relative;
+	width: 92%;
+	height: 49.5%;
+	max-width: 1600px;
+	max-height: 900px;/*
+	left: 10%;*/
+	padding-bottom: 32%;
+	padding-top: 25px;
+	height: 0;
+	text-align: center;
+	margin-bottom: 1%;
+}
+
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+
+
+
+.socialButton {
+	display: flex;
+	align-items: flex-end;
+	justify-content: flex-start;
+}
+
+h1 {
+	font-family: "Roboto";
+	margin-top: 15px;
+	margin-bottom: -10px;
+	text-align: center;
+	color: white;
+	font-size: 25pt;
+	font-weight: 400;
+}
+
+h2 {
+	font-family: "Roboto";
+	color: white;
+	font-size: 20pt;
+	font-weight: 400;
+}
+
+.repHead {
+	font-size: 20pt;
+	font-weight: 400;
+}
+
+h3 {
+	font-family: "Roboto";
+	margin-top: -5px;
+	color: grey;
+	font-size: 12pt;
+	font-weight: 300;
+}
+
+h4 /*used for video.html titles*/ { 
+	margin-bottom: 10px;
+	font-family: "Roboto";
+	text-align: center;
+	color: white;
+	font-size: 18pt;
+	font-weight: 400;
+}
+
+.songsWrap {
+	background-image: url("img/photos/music.jpg");
+	background-position: 70% 55%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	display: flex;
+	justify-content: center;
+}
+
+.aboutWrap {
+	background-image: url("img/photos/about.jpg");
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	display: flex;
+	justify-content: center;
+}
+
+.songs {
+	width: 96%;
+	max-width: 1600px; 
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;/*
+	margin-top: 150px;
+	margin-bottom: 150px;*/
+}
+
+.song {
+	border: 1.5px solid white;
+	border-radius: 30px;
+	background-color: rgba(0, 0, 0, 0.6);
+	margin:20px;
+	width: 304px;
+	text-align: center;
+	font-family: Roboto;
+	font-weight: 300;
+}
+
+.songTitle {
+	margin-top: -4px;
+	color: white;
+	font-size: 15pt;
+	font-weight: 400;
+}
+
+.songArtist {
+	margin-top: -4px;
+	margin-bottom: 5px;
+	color: #d5d0be;
+	font-size: 11pt;
+	font-weight: 400;
+}
+
+.regularTextWrap {
+	display: flex;
+	justify-content: center;
+}
+
+.regularText {
+/*
+	background-color: rgba(0, 0, 0, 0.6);*/
+	max-width: 1600px;
+	width: 96%;
+	text-align: center;
+	color: white	;
+	font-size: 15pt;
+	margin-bottom: 25px;
+}
+
+.picNtext {
+	display: flex;
+	justify-content: center;
+	max-width: 80%;
+	color: white;
+	font-size: 15pt;
+}
+
+.imgWrap {
+}
+
+.sideText {
+	margin-left: 80px;
+	max-width: 35%;
+	text-align: left;
+	color: white;
+	font-size: 15pt;
+}
+
+footer {
+	margin-left: 10%;
+	max-width: 80%;
+	text-align: center;
+	color: grey;
+	font-size: 10pt;
+}
+
+.messengerLink {
+	color: white;
+	padding-top: 5px;
+	/*text-decoration: underline;
+	margin-left: 5px;*/
+  	/*display: inline;*/
+}
+
+.viberLink:hover {
+	text-decoration: none;
+	color: #7360f2;
+}
+
+.whatsappLink:hover {
+	text-decoration: none;
+	color: #46c756;
+}
+
+.telegramLink:hover {
+	text-decoration: none;
+	color: #2eb6e5;
+}
+
+.vkLink:hover {
+	text-decoration: none;
+	color: #4680c2;
+}
+
+.instagramLink:hover {
+	text-decoration: none;
+	color: #f56a35;
+}
+
+.youtubeLink:hover {
+	text-decoration: none;
+	color: #ff0000;
+}
+
+.twitterLink:hover {
+	text-decoration: none;
+	color: #1da1f2;
+}
+
+.phoneLink:hover {
+	text-decoration: none;
+	/*color: #e28b00; */
+	color: #f9bc66;
+}
+
+.textLink {
+	color: #4692c2;
+	text-decoration: underline;
+}
+
+.textLink:hover {
+	color: #f56a35;
+}
+
+.contactsIndexBottom {
+	margin-top: -15px;	
+	margin-bottom: 80px;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	justify-content: center;
+	font-size: 15pt;
+}
+
+.contactsContacts {
+	margin-top: -15px;	
+	margin-bottom: 80px;
+	display: flex;
+	animation-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+	font-size: 15pt;
+}
+
+.col {
+	color: white;
+	font-family: "Roboto";
+	font-weight: 200;
+	font-size: 14pt;
+	margin-bottom: 30px;
+}
+
+
+.container-fluid {
+	width: 96%;
+	max-width: 1600px;
+	
+	margin-bottom: 80px;
+}
+
+/*.biggerCont {
+	min-width: 700px;
+}*/
+
+.smallerCont {
+	width: 50%;
+	margin-bottom: 80px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+
+.bandPhoto {
+    max-width: 100%;
+    max-height: 100%;
+    min-width: 220px;
+}
+
+
+
+
+.leftText {
+	text-align: right;
+}
+
+.centeredText {
+	text-align: center;
+}
+
+.fileCont {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.band {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.bandMember {
+	margin-bottom: 50px;
+	/*display: flex;
+	justify-content: center;
+	flex-wrap: wrap;*/
+	text-align: center;
+	max-width: 400px;
+	width: 90%;
+}
+
+.bandMemberPhoto {
+	width: 100%;
+	max-width: 350px;
+	margin-bottom: 10px;
+}
+
+.bandMemberSplitter {
+	width: 25px;
+	height: 0px;
+}
+
+.zoomerPicWrap {
+	width: 70px;
+	height: 60px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.zoomerPic {
+	width: 45px;
+	margin: 10px;
+	transition-duration: 0.2s;
+}
+
+.zoomerPic:hover {
+	width: 60px;
+	transition-duration: 0.2s;
+}
+
+.flexCenter {
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.zoomerSmallPicWrap {
+	width: 40px;
+	margin-top: -25px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.zoomerSmallPic {
+	width: 25px;
+	margin: 10px;
+	transition-duration: 0.2s;
+}
+
+.zoomerSmallPic:hover {
+	width: 35px;
+	transition-duration: 0.2s;
+}
+
+.photoGallery {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+
+.galleryPicture {
+	width: 92%;
+	margin: 10px;
+}
+
+.hor {	
+	max-width: 720px;
+	max-height: 480px;
+}
+
+.ver {
+	max-width: 360px;
+	max-height: 480px;
+}
+
+
+/*.bandMemberStory {
+	color: white;
+	max-width: 1000px;
+	font-family: "Roboto";
+	font-weight: 200;
+	font-size: 14pt;*/
+
+
+/*ЭТО ВЕРСИЯ ДЛЯ «ОБ УЧАСТНИКАХ» С ДЛИННЫМ ОПИСАНИЕМ КАЖДОГО
+
+.band {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+}
+
+.bandMember {
+	margin-bottom: 50px;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	max-width: 100em;
+	width: 90%;
+}
+
+.bandMemberPhoto {
+	width: 100%;
+	max-width: 350px;
+	margin-bottom: 10px;
+}
+
+.bandMemberSplitter {
+	width: 25px;
+	height: 0px;
+}
+
+.bandMemberStory {
+	color: white;
+	max-width: 1000px;
+	font-family: "Roboto";
+	font-weight: 200;
+	font-size: 14pt;
+}*/
