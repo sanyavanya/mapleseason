@@ -8,11 +8,33 @@ body {
 	justify-content: center;
 	background-color: black;
 	/*max-width: 80%;*/
+	position: -webkit-sticky;  
+	position: sticky;
+	top: 0;
+	z-index: 1;
+}
+
+.navbar {
+	padding: 0;
+
+	/*margin: -10px;*/
 }
 
 .videoWrapperWrap {
 	display: flex;
 	justify-content: center;
+}
+
+.my-img-top {
+	height: 165px;
+	transition-duration: 300ms;
+	transition-timing-function: ease-out;
+}
+
+.my-img-scrolled {
+	height: 80px;
+	transition-duration: 500ms;
+	transition-timing-function: ease-out;
 }
 
 .videoWrapper {

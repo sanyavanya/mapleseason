@@ -29,3 +29,21 @@ function hoverYouTube(element) {
 function unhoverYouTube(element) {
   element.setAttribute('src', 'img/youtubebutton.png');
 }
+
+const logo = document.getElementById("my-img");
+if (window.scrollY >= 200) {
+	logo.classList.add("my-img-scrolled");
+	logo.classList.remove("my-img-scrolled-top");
+}
+const toggleZoom = () => {
+	if (window.scrollY >= 200) {
+		logo.classList.add("my-img-scrolled");
+		logo.classList.remove("my-img-scrolled-top");
+	}
+	if (window.scrollY === 0) {
+		logo.classList.add("my-img-top");
+		logo.classList.remove("my-img-scrolled");
+	}
+}
+
+window.addEventListener("scroll", toggleZoom, {passive: true});
