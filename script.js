@@ -47,3 +47,7 @@ const toggleZoom = () => {
 }
 
 window.addEventListener("scroll", toggleZoom, {passive: true});
+
+if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+    alert("mobile device detected");
+}
