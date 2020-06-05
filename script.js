@@ -31,10 +31,7 @@ function unhoverYouTube(element) {
 }
 
 const logo = document.getElementById("my-img");
-if (window.scrollY >= 200) {
-	logo.classList.add("my-img-scrolled");
-	logo.classList.remove("my-img-scrolled-top");
-}
+
 const toggleZoom = () => {
 	if (window.scrollY >= 200) {
 		logo.classList.add("my-img-scrolled");
@@ -46,8 +43,12 @@ const toggleZoom = () => {
 	}
 }
 
-window.addEventListener("scroll", toggleZoom, {passive: true});
-
 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
-    alert("mobile device detected");
+    logo.classList.add("my-img-scrolled");
+} else {
+	if (window.scrollY >= 200) {
+		logo.classList.add("my-img-scrolled");
+		logo.classList.remove("my-img-scrolled-top");
+	}
+	window.addEventListener("scroll", toggleZoom, {passive: true});
 }
