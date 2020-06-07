@@ -27,14 +27,14 @@ body {
 
 .my-img-top {
 	height: 165px;
-	transition-duration: 300ms;
-	transition-timing-function: ease-out;
+	transition-duration: 360ms;
+	transition-timing-function: ease-in-out;
 }
 
 .my-img-scrolled {
 	height: 80px;
-	transition-duration: 500ms;
-	transition-timing-function: ease-out;
+	transition-duration: 360ms;
+	transition-timing-function: ease-in-out;
 }
 
 .videoWrapper {
