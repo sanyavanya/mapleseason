@@ -15,7 +15,7 @@
         {{link.caption}}
       </router-link>
       <div class="navbar__link"><a href="tel:+79200059911" class="navbar__phone">+7 (920) 005-99-11</a></div>
-      <div v-for="social in socials" :key="'navbar__' + social.name">
+      <div v-for="social in socials" :key="'navbar__' + social.name"><!-- TODO replace with SocialButtons component -->
         <a :href="social.href">
           <div class="navbar__social-container">
             <img :src="getImgUrl(social.iconWhite)" class="navbar__social">
@@ -105,7 +105,7 @@
   .navbar {
     display: flex;
     align-items: center;
-    .navbar__logo {
+    .navbar__logo { // TODO can be just '&__logo'!
       transition: width 300ms, opacity 100ms;
     }
     .navbar__logo--small {

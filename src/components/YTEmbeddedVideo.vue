@@ -1,7 +1,7 @@
 <template>
   <div>
     <template v-if="title">
-      <h2>{{title}}</h2><!-- TODO style headings -->
+      <h2 class="heading">{{title}}</h2><!-- TODO style headings -->
     </template>
     <div class="yt-embedded-video-container">
       <div class="yt-embedded-video">

@@ -2,16 +2,28 @@
   <div>
     <!-- TODO should components be kebab-cased? -->
     <YTEmbeddedVideo src="https://www.youtube.com/embed/g99nKpefMfA" />
-    <h1>Кавер-группа Maple Season</h1><!-- TODO style headers, _T() -->
+    <About />
+    <BandMembers />
+    <FooterContact />
   </div>
 </template>
 <script>
   import YTEmbeddedVideo from './YTEmbeddedVideo'
+  import About from './About'
+  import BandMembers from './BandMembers'
+  import FooterContact from './FooterContact'
 
   export default {
     name: 'Home',
     components: {// TODO set components globally?
-      YTEmbeddedVideo
+      YTEmbeddedVideo,
+      About,
+      BandMembers,
+      FooterContact
     }
   }
 </script>
+
+<style lang="scss" scoped>
+  
+</style>

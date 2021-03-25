@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1 class="heading">Видео</h1>
     <YTEmbeddedVideo 
       v-for="video in videos"
       :key="'yt-embedded-video' + video.title"    
