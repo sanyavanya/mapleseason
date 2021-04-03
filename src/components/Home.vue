@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- TODO should components be kebab-cased? -->
-    <EmbeddedVideo src="https://www.youtube.com/embed/g99nKpefMfA" customRatio="43"/>
+    <EmbeddedVideo src="https://www.youtube.com/embed/g99nKpefMfA" :customRatio="43"/>
     <About />
     <BandMembers />
     <FooterContact />

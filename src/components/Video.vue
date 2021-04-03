@@ -1,13 +1,15 @@
 <template>
   <div>
     <h1 class="heading">Видео</h1>
-    <EmbeddedVideo
-      v-for="(video, index) in videos"
-      :key="'yt-embedded-video' + video.title"    
-      :src="video.src"
-      :title="video.title"
-      @click="stopPlaybackExceptClicked(index)"
-    />
+    <template v-for="(video, index) in videos">
+      <EmbeddedVideo
+        class="embedded-video"
+        v-if="index < videoDisplayCount"
+        :key="'yt-embedded-video' + video.title"
+        :src="video.src"
+        :title="video.title"
+      />
+    </template>
   </div>
 </template>
 <script>
@@ -20,6 +22,7 @@
     },
     data() {
       return {
+        videoDisplayCount: 2,
         videos: [
           {
             title: 'Lewis Capaldi — Someone You Loved',
@@ -88,6 +91,20 @@
         ]
       }
     },
+    methods: {
+      handleScroll() {
+        let videos = document.getElementsByClassName('embedded-video')
+        let lastLoadedVideoPosition = videos[videos.length - 1].offsetTop
+        let pageBottomPosition = window.scrollY + window.screen.height
+        if (pageBottomPosition > lastLoadedVideoPosition) this.videoDisplayCount += 2
+      }
+    },
+    created() {
+      window.addEventListener('scroll', this.handleScroll)
+    },
+    destroyed() {
+      window.removeEventListener('scroll', this.handleScroll)
+    }
   }
 </script>
 
