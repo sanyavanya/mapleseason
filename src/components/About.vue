@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1 class="heading">Кавер-группа Maple Season</h1><!-- TODO style headers, _T() -->
-    <div class="about">
+    <div class="about parallax">
       <div class="about__text-container">
         <p class="about__text">
           Весной 2014 года Женя и Саша подготовили небольшую концертную программу из&nbsp;популярных песен, 
@@ -12,7 +12,7 @@
         <p class="about__text">
           К концу года к&nbsp;группе присоединились барабанщик и басист, и ребята начали качать танцполы. 
           Maple&nbsp;Season стали регулярно выступать на&nbsp;корпоративах и&nbsp;свадьбах, на&nbsp;пикниках и&nbsp;теплоходах, на&nbsp;небольших квартирниках и&nbsp;крупных фестивалях. 
-          <a class="inline-link" href="repertoire">Репертуар</a> группы 
+          <router-link to="/repertoire" class="inline-link">Репертуар</router-link> группы 
           состоит из&nbsp;популярных русско- и&nbsp;англоязычных песен XXI&nbsp;века и&nbsp;дюжины бессмертных хитов прошлого столетия.
         </p>
         <p class="about__text">
@@ -45,7 +45,6 @@
 <style lang="scss" scoped>
   .about {
     background-image: url("../assets/photos/about.jpg");
-    background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;

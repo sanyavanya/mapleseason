@@ -1,14 +1,14 @@
 <template>
   <div>
     <!-- TODO should components be kebab-cased? -->
-    <YTEmbeddedVideo src="https://www.youtube.com/embed/g99nKpefMfA" />
+    <EmbeddedVideo src="https://www.youtube.com/embed/g99nKpefMfA" customRatio="43"/>
     <About />
     <BandMembers />
     <FooterContact />
   </div>
 </template>
 <script>
-  import YTEmbeddedVideo from './YTEmbeddedVideo'
+  import EmbeddedVideo from './EmbeddedVideo'
   import About from './About'
   import BandMembers from './BandMembers'
   import FooterContact from './FooterContact'
@@ -16,7 +16,7 @@
   export default {
     name: 'Home',
     components: {// TODO set components globally?
-      YTEmbeddedVideo,
+      EmbeddedVideo,
       About,
       BandMembers,
       FooterContact

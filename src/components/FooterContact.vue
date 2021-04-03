@@ -18,7 +18,7 @@
         </a>
         <a href="https://teleg.run/vsetruba" class="footer_contact__link footer_contact__link--telegram">
           <img src="../assets/icons/contact_telegram.png" class="footer_contact__icon">
-          <span>Telegram</span>
+          <span>Telegram</span><!-- TODO _T() -->
         </a>
       </div>      
     </div>
@@ -60,6 +60,7 @@
 
   .footer_contact__icon {
     width: 2rem;
+    margin-right: .1rem;
   }
 
   .footer_contact__link_group {

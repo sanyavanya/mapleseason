@@ -2,15 +2,17 @@
   <div>
     <h1 class="heading">Участники группы</h1>
     <div class="band-members-container">
-      <div class="band-member" v-for="bandMember in bandMembers" :key="'band-member__' + bandMember.vkHandle">
-        <img :src="getImgUrl(bandMember.photo)" class="band-member__photo">
-        <h3 class="heading band-member__name">{{bandMember.name}}</h3>
-        <p class="band-member__role">{{bandMember.role}}</p>
-        <SocialButtons 
-          :vk="'https://www.vk.com/' + bandMember.vkHandle"
-          :in="'https://www.instagram.com/' + bandMember.instagramHandle"
-          buttonSizeCSS="1.5rem"
-        />
+      <div class="band-members">
+        <div class="band-member" v-for="bandMember in bandMembers" :key="'band-member__' + bandMember.vkHandle">
+          <img :src="getImgUrl(bandMember.photo)" class="band-member__photo">
+          <h3 class="heading band-member__name">{{bandMember.name}}</h3>
+          <p class="band-member__role">{{bandMember.role}}</p>
+          <SocialButtons 
+            :vk="'https://www.vk.com/' + bandMember.vkHandle"
+            :in="'https://www.instagram.com/' + bandMember.instagramHandle"
+            buttonSizeCSS="1.5rem"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -65,12 +67,30 @@
   }
 </script>
 <style lang="scss" scoped>
-  .band-members-container { // TODO should probably be a grid and not show 3 on one line and 1 on the next line
+  .band-members-container {
     display: flex;
     justify-content: center;
+    margin-top: 2rem;
+  }
+  .band-members { // TODO should probably be a grid and not show 3 on one line and 1 on the next line
+    justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+    display: grid;
+    grid-gap: 2rem;
+    @media (min-width: 1210px) and (max-width: 1640px) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @media (min-width: 1640px) {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      max-width: 1600px;
+    }
+  }
+
+  .band-member {
     margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .band-member__photo {

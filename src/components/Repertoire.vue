@@ -1,16 +1,39 @@
 <template>
-  <div>
-    <h1>Репертуар группы</h1>
-    <template v-for="list in lists">
-      <div class="list" :key="'repertoire__list--' + list.name"><!-- TODO: name keys properly, maybe like BEM -->
-        <h2>{{list.title}}</h2>
-        <ul>
-          <li v-for="song in repertoire[list.name]" :key="'repertoire-song__' + song">
-            {{song}}
-          </li>
-        </ul>
+  <div class="repertoire">
+    <h1 class="heading">Репертуар группы</h1>
+    <div class="repertoire__lists">
+      <div class="repertoire__list-container">
+        <div class="repertoire__list"><!-- TODO: name keys properly, maybe like BEM -->
+          <h2 class="heading--2">Танцевальные</h2>
+          <ul class="repertoire__songs">
+            <li v-for="song in repertoire['dance']" :key="'repertoire__dance-song--' + song" class="repertoire__song">
+              {{song}}
+            </li>
+          </ul>
+        </div> 
       </div>
-    </template>   
+      <div class="repertoire__list-container">
+        <div class="repertoire__list"><!-- TODO: name keys properly, maybe like BEM -->
+          <h2 class="heading--2">Умеренные и лирические</h2>
+          <ul class="repertoire__songs">
+            <li v-for="song in repertoire['calm']" :key="'repertoire__dance-song--' + song" class="repertoire__song">
+              {{song}}
+            </li>
+          </ul>
+        </div> 
+        <div class="repertoire__list"><!-- TODO: name keys properly, maybe like BEM -->
+          <h2 class="heading--2">Авторские</h2>
+          <ul class="repertoire__songs">
+            <li v-for="song in repertoire['self']" :key="'repertoire__dance-song--' + song" class="repertoire__song">
+              {{song}}
+            </li>
+          </ul>
+        </div> 
+      </div>
+    </div>
+    <p>
+      Наиболее актуальный репертуар группы всегда доступен по <a href="https://drive.google.com/open?id=1vycwEOIRNxAyVxBXVwKMGAgj2weNK8q0" class="inline-link">ссылке</a>.
+    </p>
   </div>
 </template>
 <script>
@@ -25,11 +48,11 @@
           },
           {
             name: 'calm',
-            title: 'Танцевальные'
+            title: 'Умеренные и лирические'
           },
           {
             name: 'self',
-            title: 'Танцевальные'
+            title: 'Авторские'
           }
         ],
         repertoireStringLiterals: {
@@ -121,3 +144,30 @@ TUMANOV — Пой Мне`
     }
   }
 </script>
+
+<style lang="scss" scoped>
+  .repertoire {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .repertoire__lists {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  .repertoire__list-container {
+    text-align: center;
+    flex: 1 1 0px;
+  }
+  .repertoire__songs {
+    margin: 0;
+    padding-inline-start: 0;
+  }
+  .repertoire__song {
+    list-style-type: none;
+    margin-bottom: .4rem;
+  }
+</style>

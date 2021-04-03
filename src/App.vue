@@ -40,9 +40,19 @@ body {
   text-align: center;
 }
 
-.component {// TODO every component should probably have the same margin so that they naturally space out evenly wherever you put them
+.heading--2 {
+  margin-bottom: .5rem;
+}
 
+.component {// TODO every component should probably have the same margin so that they naturally space out evenly wherever you put them
   margin-bottom: 1rem;
+}
+
+.parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .inline-link {
