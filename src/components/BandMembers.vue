@@ -4,7 +4,7 @@
     <div class="band-members-container">
       <div class="band-members">
         <div class="band-member" v-for="bandMember in bandMembers" :key="'band-member__' + bandMember.vkHandle">
-          <img :src="getImgUrl(bandMember.photo)" class="band-member__photo">
+          <img :src="getImgUrl(bandMember.photo)" :alt="bandMember.name" class="band-member__photo">
           <h3 class="heading band-member__name">{{bandMember.name}}</h3>
           <p class="band-member__role">{{bandMember.role}}</p>
           <SocialButtons 

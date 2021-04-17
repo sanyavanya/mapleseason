@@ -3,7 +3,7 @@ import Photo from './components/Photo'
 import Video from './components/Video'
 // import Music from './components/Music'
 import Repertoire from './components/Repertoire'
-// import Contact from './components/Contact'
+import Contact from './components/Contact'
 
 export const routes = [ // TODO add 404
   {
@@ -31,10 +31,10 @@ export const routes = [ // TODO add 404
     name: 'repertoire',
     component: Repertoire
   },
-  // {
-  //   path: '/contact',
-  //   name: 'contact',
-  //   component: Contact
-  // }
+  {
+    path: '/contact',
+    name: 'contact',
+    component: Contact
+  }
 ]
   

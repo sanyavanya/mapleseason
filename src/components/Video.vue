@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h1 class="heading">Видео</h1>
     <template v-for="(video, index) in videos">
       <EmbeddedVideo
         class="embedded-video"
@@ -14,16 +13,22 @@
 </template>
 <script>
   import EmbeddedVideo from './EmbeddedVideo'
+  import { debounce } from 'debounce'
 
   export default {
     name: 'Video',
-    components: {// TODO set components globally?
+    components: {
       EmbeddedVideo
     },
     data() {
       return {
+        pageBottomPositionMax: 0,
         videoDisplayCount: 2,
         videos: [
+          {
+            title: 'Сюрприз на 35 лет',
+            src: 'https://www.youtube.com/embed/6ki32XAn6as'
+          },
           {
             title: 'Lewis Capaldi — Someone You Loved',
             src: 'https://vk.com/video_ext.php?oid=-70412264&id=456239080&hash=230ddedcc3c744d7&hd=2'
@@ -93,17 +98,20 @@
     },
     methods: {
       handleScroll() {
-        let videos = document.getElementsByClassName('embedded-video')
-        let lastLoadedVideoPosition = videos[videos.length - 1].offsetTop
         let pageBottomPosition = window.scrollY + window.screen.height
-        if (pageBottomPosition > lastLoadedVideoPosition) this.videoDisplayCount += 2
+        if (pageBottomPosition > this.pageBottomPositionMax + 50) {
+          let videos = document.getElementsByClassName('embedded-video')
+          let lastLoadedVideoPosition = videos[videos.length - 1].offsetTop
+          if (pageBottomPosition > lastLoadedVideoPosition) this.videoDisplayCount += 2
+          this.pageBottomPositionMax = pageBottomPosition
+        }
       }
     },
     created() {
-      window.addEventListener('scroll', this.handleScroll)
+      window.addEventListener('scroll', debounce(this.handleScroll, 500))
     },
     destroyed() {
-      window.removeEventListener('scroll', this.handleScroll)
+      window.addEventListener('scroll', debounce(this.handleScroll, 500))
     }
   }
 </script>

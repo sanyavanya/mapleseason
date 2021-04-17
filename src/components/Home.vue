@@ -15,7 +15,7 @@
 
   export default {
     name: 'Home',
-    components: {// TODO set components globally?
+    components: {
       EmbeddedVideo,
       About,
       BandMembers,

@@ -5,7 +5,7 @@
       <template v-for="(href, key) in $props">
         <div v-if="href && key !== 'buttonSizeCSS'" :key="'about__social_link_' + key" class="social-links__link-container">
           <a :href="href">
-            <img :src="getImgUrl(icons[key])" class="social-links__link" :style="{width: buttonSizeCSS || '2rem'}">
+            <img :src="getImgUrl(icons[key])" :alt="key" class="social-links__link" :style="{width: buttonSizeCSS || '2rem'}">
           </a>
         </div>
       </template>

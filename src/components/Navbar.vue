@@ -2,7 +2,7 @@
   <div class="navbar-container">
     <div class="navbar">
       <router-link to="/" exact tag="div" class="navbar__link" active-class="navbar__link--active">
-        <img src="../assets/logo.png" class="navbar__logo" :class="minified ? 'navbar__logo--small' : 'navbar__logo--large'">
+        <img src="../assets/logo.png" alt="logo" class="navbar__logo" :class="minimized ? 'navbar__logo--small' : 'navbar__logo--large'">
       </router-link>
       <router-link
         v-for="link in links"
@@ -18,8 +18,8 @@
       <div v-for="social in socials" :key="'navbar__' + social.name"><!-- TODO replace with SocialButtons component -->
         <a :href="social.href">
           <div class="navbar__social-container">
-            <img :src="getImgUrl(social.iconWhite)" class="navbar__social">
-            <img :src="getImgUrl(social.iconColored)" class="navbar__social--colored">
+            <img :src="getImgUrl(social.iconWhite)" :alt="social.name" class="navbar__social">
+            <img :src="getImgUrl(social.iconColored)" :alt="social.name" class="navbar__social--colored">
           </div>
         </a>
       </div>
@@ -53,7 +53,9 @@
             to: 'contact'
           }
         ],
-        minified: false,
+        minimized: false,
+        breakpointMinimize: 20,
+        breakpointMaximize: 100,
         socials: [
           {
             name: 'vk',
@@ -81,8 +83,8 @@
         return require('../assets/icons/' + pic)
       },
       setMinified() {  
-        let breakpoint = this.minified ? 100 : 200
-        this.minified = window.scrollY >= breakpoint
+        let breakpoint = this.minimized ? this.breakpointMinimize : this.breakpointMaximize
+        this.minimized = window.scrollY >= breakpoint
       }
     },
     mounted() {
@@ -106,7 +108,7 @@
     display: flex;
     align-items: center;
     .navbar__logo { // TODO can be just '&__logo'!
-      transition: width 300ms, opacity 100ms;
+      transition: width 400ms, opacity 100ms;
     }
     .navbar__logo--small {
       width: 5rem;

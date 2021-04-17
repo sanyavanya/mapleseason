@@ -34,6 +34,7 @@ export default {
 body {
   background-color: black; //TODO scss constants: $background_color
   color: white; // TODO scss constants: $text_color SHOULDN'T BE GLOBAL!
+  margin: 0;
 }
 
 .heading {
@@ -62,5 +63,68 @@ body {
 
 .inline-link:hover {
 	color: #f56a35; //TODO const
+}
+
+.icon-link-group {
+  display: flex;
+  justify-content: center;
+}
+
+.icon-link {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: .5rem;
+  white-space: nowrap;
+}
+
+.icon-link__icon {
+  height: 2rem;
+  margin-right: .1rem;
+}
+
+.icon-link__icon--small {
+  height: 1.7rem;
+}
+
+.icon-link--vk:hover {
+  color: #4680c2;
+  text-decoration-color: #4680c2;
+}
+
+.icon-link--instagram:hover {
+  color: #f56a35;
+  text-decoration-color: #f56a35;
+}
+
+.icon-link--youtube:hover {
+  color: #ff0000;
+  text-decoration-color: #ff0000;
+}
+
+.icon-link--twitter:hover {
+  color: #1da1f2;
+  text-decoration-color: #1da1f2;
+}
+
+.icon-link--viber:hover {
+  color: #7360f2;
+  text-decoration-color: #7360f2;
+}
+
+.icon-link--whatsapp:hover {
+  color: #46c756;
+  text-decoration-color: #46c756;
+}
+
+.icon-link--telegram:hover {
+  color: #2eb6e5;
+  text-decoration-color: #2eb6e5;
+}
+
+.icon-link--phone:hover {
+  color: #f9bc66;
+  text-decoration-color: #f9bc66;
 }
 </style>
