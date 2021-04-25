@@ -1,10 +1,11 @@
 <template>
-  <div>
-    Create a good carousel!
-  </div>
+    <div>
+    </div>
 </template>
 <script>
   export default {
     name: 'Photo'
   }
 </script>
+<style scoped>
+</style>
