@@ -1,16 +1,6 @@
 <template>
   <div class="music">
-    <div class="songs-container">
-      <div class="songs">
-        <AudioPlayer :playlist="songs" />
-<!--        <div class="song" v-for="song in songs" :key="song.artist + song.title">-->
-<!--          <audio :src="song.src" controls>Ошибка: ваш браузер не поддерживает аудио.</audio>-->
-<!--          <br>-->
-<!--          <div class="song__title">{{song.title}}</div>-->
-<!--          <div class="song__artist">{{song.artist}}</div>-->
-<!--        </div>-->
-      </div>
-    </div>
+    <AudioPlayer :playlist="songs" />
   </div>
 </template>
 <script>
@@ -59,17 +49,17 @@
           },
           {
             src: 'tumanov_-_kto_ty.mp3',
-            title: 'Blinding Lights',
+            title: 'Кто ты',
             artist: 'TUMANOV'
           },
           {
             src: 'tumanov_-_poy_mne.mp3',
-            title: 'Blinding Lights',
+            title: 'Пой мне',
             artist: 'TUMANOV'
           },
           {
             src: 'tumanov_-_muza.mp3',
-            title: 'Blinding Lights',
+            title: 'Муза',
             artist: 'TUMANOV'
           }
           // TODO add the rest of the songs
@@ -82,47 +72,11 @@
   .music {
     display: flex;
     justify-content: center;
-  }
-  .songs-container {
-    max-width: 1600px;
     width: 100%;
     position: relative;
-    display: flex;
-    justify-content: center;
     background-image: url("../assets/photos/music.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 70% 55%;
-  }
-
-  .songs {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .song {
-    border: 1.5px solid white;
-    border-radius: 30px;
-    background-color: rgba(0, 0, 0, 0.6);
-    margin:20px;
-    width: 304px;
-    text-align: center;
-    font-weight: 300;
-  }
-
-  .song__title {
-    // margin-top: -4px;
-    color: white;
-    font-size: 15pt;
-    font-weight: 400;
-  }
-
-  .song__artist {
-    // margin-top: -4px;
-    margin-bottom: 5px;
-    color: #d5d0be;
-    font-size: 11pt;
-    font-weight: 400;
   }
 </style>
