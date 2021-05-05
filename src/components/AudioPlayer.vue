@@ -114,7 +114,9 @@
       },
       jumpToClickPos(event) { // TODO maybe optimize after you finish trackMouse()
         document.onmousemove = null
-        this.$refs.audio.currentTime = this.calculateMovedFraction(event) * this.timeDuration
+        this.movedFraction = this.calculateMovedFraction(event)
+        this.$refs.audio.currentTime = this.movedFraction * this.timeDuration
+        setTimeout(() => this.movedFraction = undefined, 500)
       },
       calculateMovedFraction(event) {
         let trackWidth = this.$refs.positionContainer.clientWidth
