@@ -1,9 +1,9 @@
-import Home from './components/Home' // TODO organize project folder structure properly
-import Photo from './components/Photo'
-import Video from './components/Video'
-import Music from './components/Music'
-import Repertoire from './components/Repertoire'
-import Contact from './components/Contact'
+import Home from './pages/Home' // TODO organize project folder structure properly
+import Photo from './pages/Photo'
+import Video from './pages/Video'
+import Music from './pages/Music'
+import Repertoire from './pages/Repertoire'
+import Contact from './pages/Contact'
 
 export const routes = [ // TODO add 404
   {

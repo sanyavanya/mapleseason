@@ -7,10 +7,11 @@
           <img :src="getImgUrl(bandMember.photo)" :alt="bandMember.name" class="band-member__photo">
           <h3 class="heading band-member__name">{{bandMember.name}}</h3>
           <p class="band-member__role">{{bandMember.role}}</p>
-          <SocialButtons 
+          <AppSocialButtons
             :vk="'https://www.vk.com/' + bandMember.vkHandle"
             :in="'https://www.instagram.com/' + bandMember.instagramHandle"
-            buttonSizeCSS="1.5rem"
+            :buttonSize="1.5"
+            buttonSizeUnit="rem"
           />
         </div>
       </div>
@@ -18,12 +19,12 @@
   </div>
 </template>
 <script>
-  import SocialButtons from '../components/SocialButtons' // TODO register components like this globally
+  import AppSocialButtons from '../components/AppSocialButtons' // TODO register components like this globally
 
   export default {
     name: 'BandMembers',
     components: {
-      SocialButtons
+      AppSocialButtons
     },
     data() {
       return {
@@ -36,18 +37,11 @@
             instagramHandle: 'tumanov_music'
           },
           {
-            photo: 'sodomovsky.jpg', // TODO update picture
+            photo: 'sodomovsky.jpg',
             name: 'Никита Содомовский',
             role: 'Электрогитара, бэк-вокал',
             vkHandle: 'sodomovskiy',
             instagramHandle: 'sodomovskiy'
-          },
-          {
-            photo: 'mavrychev.jpg',
-            name: 'Андрей Маврычев',
-            role: 'Бас-гитара',
-            vkHandle: 'lildry',
-            instagramHandle: 'andreymuzykant'
           },
           {
             photo: 'kalinin.jpg',
@@ -56,12 +50,19 @@
             vkHandle: 'kalinin_drums',
             instagramHandle: 'stanvave'
           },
+          {
+            photo: 'pungin.jpg',
+            name: 'Александр Пунгин',
+            role: 'Бас-гитара',
+            vkHandle: 'pungaboy',
+            instagramHandle: '_pungaboy_'
+          }
         ]
       }
     },
     methods: {
       getImgUrl(pic) { // TODO that's ALMOST! a copy, put it into a mixin
-        return require('../assets/photos/' + pic)
+        return require('../assets/images/photos/' + pic)
       },
     }
   }

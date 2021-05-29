@@ -8,8 +8,8 @@ module.exports = {
     config
       .plugin('html')
       .tap(args => {
-        args[0].title = 'Кавер-группа Maple Season';
-        return args;
+        args[0].title = 'Кавер-группа Maple Season'
+        return args
       })
   }
 }

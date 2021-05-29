@@ -1,130 +1,152 @@
 <template>
   <div id="app">
-    <Navbar />
-    <router-view />
-    <Footer />
+    <AppNavbar />
+    <div class="page">
+      <router-view />
+    </div>
+    <AppFooter />
   </div>
 </template>
 
 <script>
-import Navbar from './components/Navbar'
-import Footer from './components/Footer'
+import AppNavbar from './components/AppNavbar'
+import AppFooter from './components/AppFooter'
 // TODO check console for warnings
 
 export default {
   name: 'App',//TODO rename?
   components: {
-    Navbar,
-    Footer
+    AppNavbar,
+    AppFooter
   }
 }
 </script>
 
 <style lang="scss">
-#app {
-  // TODO scrollbar styling
-  font-family: Helvetica, Arial, sans-serif; // TODO Add a cool font like Nunito
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  // text-align: center;
-  // color: #2c3e50;
-  // margin-top: 60px;
-}
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
 
-body {
-  background-color: black; //TODO scss constants: $background_color
-  color: white; // TODO scss constants: $text_color SHOULDN'T BE GLOBAL!
-  margin: 0;
-}
+  #app {
+    // TODO scrollbar styling
+    /*font-family: Helvetica, Arial, sans-serif; // TODO Add a cool font like Nunito*/
+    font-family: 'Nunito', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    // text-align: center;
+    // color: #2c3e50;
+    // margin-top: 60px;
+  }
 
-.heading {
-  text-align: center;
-}
+  body {
+    background-color: black; //TODO scss constants: $background_color
+    color: white; // TODO scss constants: $text_color SHOULDN'T BE GLOBAL!
+    margin: 0;
+  }
 
-.heading--2 {
-  margin-bottom: .5rem;
-}
+  .page {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    @media (max-width: 1000px) {
+      margin-top: 4em;
+    }
+  }
 
-.component {// TODO every component should probably have the same margin so that they naturally space out evenly wherever you put them
-  margin-bottom: 1rem;
-}
+  .heading {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+  }
 
-.parallax {
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+  .heading--2 {
+    margin-bottom: .5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+  }
 
-.inline-link {
-	color: #4692c2; //TODO const
-	text-decoration: underline;
-}
+  .component {// TODO every component should probably have the same margin so that they naturally space out evenly wherever you put them
+    margin-bottom: 1rem;
+  }
 
-.inline-link:hover {
-	color: #f56a35; //TODO const
-}
+  .parallax {
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+  }
 
-.icon-link-group {
-  display: flex;
-  justify-content: center;
-}
+  .inline-link {
+    color: #4692c2; //TODO const
+    text-decoration: underline;
+  }
 
-.icon-link {
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: .5rem;
-  white-space: nowrap;
-}
+  .inline-link:hover {
+    color: #f56a35; //TODO const
+  }
 
-.icon-link__icon {
-  height: 2rem;
-  margin-right: .1rem;
-}
+  .icon-link-group {
+    display: flex;
+    justify-content: center;
+  }
 
-.icon-link__icon--small {
-  height: 1.7rem;
-}
+  .icon-link {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: .5rem;
+    white-space: nowrap;
+  }
 
-.icon-link--vk:hover {
-  color: #4680c2;
-  text-decoration-color: #4680c2;
-}
+  .app-icon-link__icon {
+    height: 2rem;
+    margin-right: .1rem;
+  }
 
-.icon-link--instagram:hover {
-  color: #f56a35;
-  text-decoration-color: #f56a35;
-}
+  .app-icon-link__icon--small {
+    height: 1.7rem;
+  }
 
-.icon-link--youtube:hover {
-  color: #ff0000;
-  text-decoration-color: #ff0000;
-}
+  .icon-link--vk:hover {
+    color: #4680c2;
+    text-decoration-color: #4680c2;
+  }
 
-.icon-link--twitter:hover {
-  color: #1da1f2;
-  text-decoration-color: #1da1f2;
-}
+  .icon-link--instagram:hover {
+    color: #f56a35;
+    text-decoration-color: #f56a35;
+  }
 
-.icon-link--viber:hover {
-  color: #7360f2;
-  text-decoration-color: #7360f2;
-}
+  .icon-link--youtube:hover {
+    color: #ff0000;
+    text-decoration-color: #ff0000;
+  }
 
-.icon-link--whatsapp:hover {
-  color: #46c756;
-  text-decoration-color: #46c756;
-}
+  .icon-link--twitter:hover {
+    color: #1da1f2;
+    text-decoration-color: #1da1f2;
+  }
 
-.icon-link--telegram:hover {
-  color: #2eb6e5;
-  text-decoration-color: #2eb6e5;
-}
+  .icon-link--viber:hover {
+    color: #7360f2;
+    text-decoration-color: #7360f2;
+  }
 
-.icon-link--phone:hover {
-  color: #f9bc66;
-  text-decoration-color: #f9bc66;
-}
+  .icon-link--whatsapp:hover {
+    color: #46c756;
+    text-decoration-color: #46c756;
+  }
+
+  .icon-link--telegram:hover {
+    color: #2eb6e5;
+    text-decoration-color: #2eb6e5;
+  }
+
+  .icon-link--phone:hover {
+    color: #f9bc66;
+    text-decoration-color: #f9bc66;
+  }
 </style>
