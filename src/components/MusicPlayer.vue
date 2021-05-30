@@ -1,5 +1,5 @@
 <template>
-  <div class="audio-player">
+  <div class="audio-player" :style="'max-width: ' + maxWidth">
     <div class="audio-player__now-playing">
       <div class="audio-player__meta">
         <div class="audio-player__title">{{playlist[selectedSongIndex].title}}</div>
@@ -45,7 +45,7 @@
 <script>
   export default {
     name: 'MusicPlayer',
-    props: ['playlist'],
+    props: ['playlist', 'maxWidth'],
     data() {
       return {
         playing: false,
@@ -168,9 +168,10 @@
   }
 
   .audio-player {
-    margin: 2rem 0;
+    margin: 2rem 1rem;
     background-color: rgba(0, 0, 0, 0.4);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    width: 100%;
   }
 
   .audio-player__now-playing {
@@ -185,7 +186,7 @@
   }
 
   .audio-player__control-button {
-    margin-: 0 .5rem;
+    margin: 0 .5rem;
     opacity: .8;
     background-color: transparent;
     border: none;
@@ -211,7 +212,8 @@
   }
 
   .audio-player__progress {
-    width: 400px;
+    width: 100%;
+    /*max-width: 400px;*/
   }
 
   .audio-player__play-icon {
@@ -249,12 +251,12 @@
     width: 100%;
     height: 3px;
     border-radius: 2px;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.6);
   }
 
   .audio-player__position-played {
     background-color: white;
-    box-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 3px rgba(255, 255, 255, 0.6);
     height: 3px;
     border-radius: 2px;
     position: absolute;
@@ -275,7 +277,7 @@
   }
 
   .audio-player__songs-container {
-    border-top: 2px solid rgba(255, 255, 255, 0.5);
+    border-top: 2px solid rgba(255, 255, 255, 0.6);
     max-height: 300px;
     overflow: scroll;
   }
@@ -295,7 +297,7 @@
     transition-duration: 50ms;
 
     &:hover {
-      background-color: rgba(255, 255, 255, 0.5);
+      background-color: rgba(255, 255, 255, 0.6);
       color: rgba(0, 0, 0, 0.7);
       cursor: pointer;
       transition-duration: 20ms;
@@ -303,7 +305,7 @@
   }
 
   .audio-player__song--current {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.6);
     color: rgba(0, 0, 0, 0.7);
   }
 

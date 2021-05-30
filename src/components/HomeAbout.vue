@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="heading">Кавер-группа Maple Season</h1><!-- TODO style headers, _T() -->
+    <h2 class="heading">Кавер-группа Maple Season</h2><!-- TODO style headers, _T() -->
     <div class="about parallax">
       <div class="about__text-container">
         <p class="about__text">
@@ -66,10 +66,12 @@
     margin-block-start: 1rem;
     margin-block-end: 1rem;
     max-width: 1600px;
-    // width: 96%; // TODO can be easily replaced everywhere with paddings
     text-align: center;
     font-size: 1.2em;
     color: white;
+    @media (max-width: 500px) {
+      text-align: left;
+    }
   }
 
   .social-links {

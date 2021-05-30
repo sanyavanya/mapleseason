@@ -4,7 +4,7 @@
       <div class="repertoire__lists">
         <div class="repertoire__list-container">
           <div class="repertoire__list"><!-- TODO: name keys properly, maybe like BEM -->
-            <h2 class="heading--2">Танцевальные</h2>
+            <h2 class="heading">Танцевальные</h2>
             <ul class="repertoire__songs">
               <li v-for="song in repertoire['dance']" :key="'repertoire__dance-song--' + song" class="repertoire__song">
                 {{song}}
@@ -14,7 +14,7 @@
         </div>
         <div class="repertoire__list-container">
           <div class="repertoire__list"><!-- TODO: name keys properly, maybe like BEM -->
-            <h2 class="heading--2">Умеренные и лирические</h2>
+            <h2 class="heading">Умеренные и лирические</h2>
             <ul class="repertoire__songs">
               <li v-for="song in repertoire['calm']" :key="'repertoire__dance-song--' + song" class="repertoire__song">
                 {{song}}
@@ -22,7 +22,7 @@
             </ul>
           </div>
           <div class="repertoire__list"><!-- TODO: name keys properly, maybe like BEM -->
-            <h2 class="heading--2">Авторские</h2>
+            <h2 class="heading">Авторские</h2>
             <ul class="repertoire__songs">
               <li v-for="song in repertoire['self']" :key="'repertoire__dance-song--' + song" class="repertoire__song">
                 {{song}}
@@ -31,7 +31,7 @@
           </div>
         </div>
       </div>
-      <p>
+      <p class="repertoire__footer">
         Наиболее актуальный репертуар группы всегда доступен по <a href="https://drive.google.com/open?id=1vycwEOIRNxAyVxBXVwKMGAgj2weNK8q0" class="inline-link">ссылке</a>.
       </p>
     </div>
@@ -165,10 +165,14 @@ TUMANOV — Пой Мне`
     justify-content: space-around;
     width: 100%;
     margin-bottom: 1rem;
+    @media (max-width: 1000px) {
+      flex-direction: column;
+    }
   }
   .repertoire__list-container {
     text-align: center;
     flex: 1 1 0px;
+    margin: 0 1rem;
   }
   .repertoire__songs {
     margin: 0;
@@ -177,5 +181,8 @@ TUMANOV — Пой Мне`
   .repertoire__song {
     list-style-type: none;
     margin-bottom: .4rem;
+  }
+  .repertoire__footer {
+    text-align: center;
   }
 </style>

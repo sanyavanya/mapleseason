@@ -1,6 +1,6 @@
 <template>
   <div class="music">
-      <MusicPlayer :playlist="songs" />
+      <MusicPlayer :playlist="songs" maxWidth="400px" />
   </div>
 </template>
 <script>

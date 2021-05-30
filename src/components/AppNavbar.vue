@@ -1,11 +1,12 @@
 <template>
   <div>
+    <h1 class="mobile-page-title">{{$route.name}}</h1>
     <div class="menu-button-container" @click="mobileMenuOpen = !mobileMenuOpen">
       <img src="../assets/images/icons/menu.png" class="menu-button" v-if="!mobileMenuOpen">
       <img src="../assets/images/icons/menu_close.png" class="menu-button" v-else>
     </div>
     <div class="navbar-container">
-    <div class="navbar" :class="{'navbar--hidden': !mobileMenuOpen}"><!-- TODO a bit laggy on resizes through 1000px breakpoint -->
+    <div class="navbar" :class="{'navbar--mobile-open': mobileMenuOpen}"><!-- TODO a bit laggy on resizes through 1000px breakpoint -->
       <router-link to="/" exact tag="div" class="navbar__link" active-class="navbar__link--active">
         <img src="../assets/images/icons/logo.png" alt="logo" class="navbar__logo" :class="minimized ? 'navbar__logo--small' : 'navbar__logo--large'">
       </router-link>
@@ -105,13 +106,12 @@
     mounted() {
       this.setMinified()
       window.addEventListener('scroll', this.setMinified)
-      // window.addEventListener('resize', () => {
-      //   if (this.mobileMenuOpen)
-      //     if (document.body.clientWidth >= 1000) {
-      //       this.mobileMenuOpen = false
-      //       console.log('closing')
-      //     }
-      // })
+      window.addEventListener('resize', () => {
+        if (this.mobileMenuOpen)
+          if (document.body.clientWidth >= 1000) {
+            this.mobileMenuOpen = false
+          }
+      })
       const navbarItems = document.getElementsByClassName('navbar__item')
       for (let item of navbarItems) {
         item.addEventListener('click', () => this.mobileMenuOpen = false)
@@ -120,23 +120,31 @@
   }
 </script>
 <style lang="scss" scoped>
-//TODO read BEM on whether nesting classes is considered OK
-//TODO and generally what am I supposed to do if there are several similar elements that share some styles and differ in other ones?
-//TODO responsive
-//TODO remove вложенность
-.menu-button-container {
+.mobile-page-title {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  margin: 0;
+  font-size: 5vmin;
+  height: 10vmin;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
   @media (min-width: 1000px) {
     display: none;
   }
-  padding: .7em 1em;
+}
+.menu-button-container {
+  padding: .8vmin 2vmin;
   position: fixed;
   top: 0;
   right: 0;
   font-size: 4vmin;
-  /*display: flex;*/
-  /*justify-content: flex-end;*/
   z-index: 10;
-
+  @media (min-width: 1000px) {
+    display: none;
+  }
 }
 .menu-button {
   width: 2em;
@@ -152,105 +160,102 @@
   display: flex;
   justify-content: center;
   position: sticky;
-	top: 0;
-	z-index: 1;
-	background-color: black; //TODO scss constants: $background_color
-  .navbar {
-    display: flex;
-    align-items: center;
+  top: 0;
+  z-index: 1;
+  background-color: black; //TODO scss constants: $background_color
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  @media (max-width: 1000px) { // TODO layout breaks when exactly on 1000px
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transform: translateY(-100%);
     transition-duration: 200ms;
-
-    @media (max-width: 1000px) { // TODO layout breaks when exactly on 1000px
-      flex-direction: column;
-      justify-content: center;
-      position: fixed;
-      top: 0;
-      background-color: rgba(0, 0, 0, 0.9);
-      width: 100%;
-      height: 100%;
-    }
-
-    .navbar__logo { // TODO can be just '&__logo'!
-      transition: width 400ms, opacity 100ms;
-      @media (max-width: 1000px) {
-        display: none;
-      }
-    }
-    .navbar__logo--small {
-      width: 5rem;
-    }
-    .navbar__logo--large {
-      width: 8rem;
-    }
-    .navbar__item {
-      @media (max-width: 1000px) {
-        padding: .2em 0;
-        font-size: 5vmin;
-      }
-    }
-    .navbar__link {
-      opacity: .7;
-      transition: opacity 150ms;
-      white-space: nowrap;
-      margin: 0 .5rem;
-      &:hover {
-        cursor: pointer;
-        opacity: 1;
-      }
-    }
-    .navbar__link--mobile-only {
-      @media (min-width: 1000px) {
-        display: none;
-      }
-    }
-    .navbar__link--active {
-      opacity: 1 !important;
-    }
-    .navbar__socials {
-      display: flex;
-    }
-    .navbar__phone {
-      color: white; //TODO scss variables
-      text-decoration: none;
-      /*&:hover {*/
-      /*  opacity: .8;*/
-      /*}*/
-    }
-    .navbar__social-container { //TODO how to name containers
-      margin: 0 .5rem; // TODO same as in navbar__link
-      position: relative;
-      display: flex;
-      align-items: center;
-      .navbar__social {
-        width: 2em;
-        opacity: 0.7;
-        @media (max-width: 1000px) {
-          width: 1.6em;
-        }
-      }
-      .navbar__social--colored {
-        width: 2em;
-        opacity: 0;
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        transition: opacity 150ms;
-        @media (max-width: 1000px) {
-          width: 1.6em;
-        }
-        &:hover {
-          opacity: 1;          
-        }
-      }
-    }    
   }
-  .navbar--hidden {
-    @media (max-width: 1000px) {
-      opacity: 0;
-      transform: translateY(-100%);
-    }
+}
+.navbar--mobile-open {
+  @media (max-width: 1000px) {
+    opacity: 1 !important;
+    transform: none !important;
   }
-}  
+}
+.navbar__logo { // TODO can be just '&__logo'!
+  transition: width 400ms, opacity 100ms;
+  @media (max-width: 1000px) {
+    display: none;
+  }
+}
+.navbar__logo--small {
+  width: 5rem;
+}
+.navbar__logo--large {
+  width: 8rem;
+}
+.navbar__item {
+  @media (max-width: 1000px) {
+    padding: .2em 0;
+    font-size: 5vmin;
+  }
+}
+.navbar__link {
+  opacity: .7;
+  transition: opacity 150ms;
+  white-space: nowrap;
+  margin: 0 .5rem;
+  &:hover {
+    cursor: pointer;
+    opacity: 1;
+  }
+}
+.navbar__link--mobile-only {
+  @media (min-width: 1000px) {
+    display: none;
+  }
+}
+.navbar__link--active {
+  opacity: 1 !important;
+}
+.navbar__socials {
+  display: flex;
+}
+.navbar__phone {
+  color: white; //TODO scss variables
+  text-decoration: none;
+}
+.navbar__social-container { //TODO how to name containers
+  margin: 0 .5rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.navbar__social {
+  width: 2em;
+  opacity: 0.7;
+  @media (max-width: 1000px) {
+    width: 1.6em;
+  }
+}
+.navbar__social--colored {
+  width: 2em;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: opacity 150ms;
+  @media (max-width: 1000px) {
+    width: 1.6em;
+  }
+  &:hover {
+    opacity: 1;
+  }
+}
 </style>

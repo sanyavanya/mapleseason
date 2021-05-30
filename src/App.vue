@@ -51,7 +51,7 @@ export default {
     justify-content: center;
     width: 100%;
     @media (max-width: 1000px) {
-      margin-top: 4em;
+      /*margin-top: 10vmin;*/
     }
   }
 
@@ -59,12 +59,12 @@ export default {
     text-align: center;
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
-  }
-
-  .heading--2 {
-    margin-bottom: .5rem;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
+    @media (max-width: 500px) {
+      font-size: 1.2em;
+    }
+    @media (min-width: 500px) and (max-width: 1000px) {
+      font-size: 1.5em;
+    }
   }
 
   .component {// TODO every component should probably have the same margin so that they naturally space out evenly wherever you put them
@@ -90,6 +90,7 @@ export default {
   .icon-link-group {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
   }
 
   .icon-link {

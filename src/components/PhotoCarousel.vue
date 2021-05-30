@@ -50,7 +50,7 @@
         }
         this.selectedIndex = index
       },
-      arrowPress(event) {
+      arrowPress(event) { //TODO detect mobile swipe
         if (event.code === 'ArrowLeft') {
           event.preventDefault()
           this.changeImage(this.selectedIndex - 1)
@@ -72,14 +72,17 @@
 </script>
 <style lang="scss" scoped>
   .photo-carousel-container {
-    width: 100%;
+    /*width: 100%;*/
     display: flex;
     justify-content: center;
     align-items: center;
   }
   .photo-carousel {
-    max-width: 60vw;
     user-select: none;
+    max-width: 60vw;
+    @media (max-width: 1000px) {
+      max-width: 90vw;
+    }
   }
   .photo-carousel__view {
     position: relative;
@@ -88,8 +91,12 @@
     align-items: center;
     height: 35vw;
     margin-bottom: 1.4rem;
+    @media (max-width: 1000px) {
+      height: 70vh;
+    }
   }
   .photo-carousel__view-image {
+    max-width: 100%;
     max-height: 100%;
   }
   .photo-carousel__view-button-container {
@@ -114,10 +121,12 @@
   }
   .photo-carousel__view-button {
     height: 2.5vw;
-    margin: 0 2rem;
+    @media (max-width: 1000px) {
+      height: 30px;
+      margin: 0 1rem;
+    }
   }
   .photo-carousel__feed {
-    width: 100%;
     overflow-x: scroll;
     scroll-behavior: smooth;
   }
@@ -131,8 +140,8 @@
   }
   .photo-carousel__thumbnail {
     margin: .1rem;
-    width: 6vw;
-    height: 6vw;
+    width: 60px;
+    height: 60px;
     overflow: hidden;
     background-repeat: no-repeat;
     background-size: cover;

@@ -8,32 +8,32 @@ import Contact from './pages/Contact'
 export const routes = [ // TODO add 404
   {
     path: '',
-    name: 'home',
+    name: '',
     component: Home
   },
   {
     path: '/photo',
-    name: 'photo',
+    name: 'Фото',
     component: Photo
   },
   {
     path: '/video',
-    name: 'video',
+    name: 'Видео',
     component: Video
   },
   {
     path: '/music',
-    name: 'music',
+    name: 'Музыка',
     component: Music
   },
   {
     path: '/repertoire',
-    name: 'repertoire',
+    name: 'Репертуар',
     component: Repertoire
   },
   {
     path: '/contact',
-    name: 'contact',
+    name: 'Организация выступлений',
     component: Contact
   }
 ]

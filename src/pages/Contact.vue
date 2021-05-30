@@ -47,10 +47,10 @@
       </p>
     </div>
     <div class="contact__photo-row">
-      <div class="contact__photo-container">
+      <div class="contact__photo-container contact__photo-container--no-mobile">
         <img src="../assets/images/photos/contact_1.jpg" alt="Корпоратив в DRKT" class="contact__photo">
       </div>
-      <div class="contact__photo-container">
+      <div class="contact__photo-container contact__photo-container--no-mobile">
         <img src="../assets/images/photos/contact_2.jpg" alt="Выступление на катке Спорт Порт (стадион Нижний Новгород)" class="contact__photo">
       </div>
       <div class="contact__photo-container">
@@ -90,6 +90,15 @@
     grid-gap: 2rem;
     max-width: 1600px;
     padding: 0 2rem;
+    @media (max-width: 1000px) {
+      display: block;
+    }
+  }
+
+  .contact__photo-container--no-mobile {
+    @media (max-width: 1000px) {
+      display: none;
+    }
   }
 
   .contact__photo {
@@ -105,9 +114,12 @@
     flex-direction: row-reverse;
     width: 100%;
     max-width: 1600px;
-
+    @media (max-width: 1000px) {
+      background-position: 10% 20%;
+    }
     @media (min-width: 1600px) {
-      /*background-attachment: initial;*/
+      background-attachment: initial;
+      background-position: 0 30%;
     }
   }
 
@@ -115,6 +127,12 @@
     font-size: 15pt;
     max-width: 35rem;
     margin: 5rem 7rem;
+    @media (max-width: 1000px) {
+      margin: 0;
+      padding: 1rem;
+      max-width: none;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
   }
 
   .hero__text-block { // TODO this ALMOST is a copy from HomeAbout

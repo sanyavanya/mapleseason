@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="heading">Участники группы</h1>
+    <h2 class="heading">Участники группы</h2>
     <div class="band-members-container">
       <div class="band-members">
         <div class="band-member" v-for="bandMember in bandMembers" :key="'band-member__' + bandMember.vkHandle">
