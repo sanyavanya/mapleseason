@@ -4,6 +4,7 @@ import Video from './pages/Video'
 import Music from './pages/Music'
 import Repertoire from './pages/Repertoire'
 import Contact from './pages/Contact'
+import NotFound from './pages/NotFound'
 
 export const routes = [ // TODO add 404
   {
@@ -35,6 +36,11 @@ export const routes = [ // TODO add 404
     path: '/contact',
     name: 'Организация выступлений',
     component: Contact
+  },
+  {
+    path: '*',
+    name: 'Четыреста четыре',
+    component: NotFound
   }
 ]
   

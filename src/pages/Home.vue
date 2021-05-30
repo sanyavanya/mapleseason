@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="home">
     <VideoEmbedder src="https://www.youtube.com/embed/g99nKpefMfA" :customRatio="43" />
     <HomeAbout />
     <BandMembers />
@@ -22,3 +22,10 @@
     }
   }
 </script>
+<style lang="scss" scoped>
+  .home {
+    @media (max-width: 1000px) {
+      margin-top: 2rem;
+    }
+  }
+</style>

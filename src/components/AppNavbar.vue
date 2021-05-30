@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="mobile-page-title">{{$route.name}}</h1>
+    <div class="mobile-page-title" :class="{'mobile-page-title--hidden': mobileMenuOpen || minimized}">{{$route.name}}</div>
     <div class="menu-button-container" @click="mobileMenuOpen = !mobileMenuOpen">
       <img src="../assets/images/icons/menu.png" class="menu-button" v-if="!mobileMenuOpen">
       <img src="../assets/images/icons/menu_close.png" class="menu-button" v-else>
@@ -121,33 +121,46 @@
 </script>
 <style lang="scss" scoped>
 .mobile-page-title {
+  transform-origin: bottom right;
   text-align: center;
   font-family: 'Montserrat', sans-serif;
-  font-weight: 500;
-  margin: 0;
-  font-size: 5vmin;
-  height: 10vmin;
+  font-weight: 600;
+  font-size: .7rem;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  align-items: flex-end;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transform: rotate(-90deg);
+  position: fixed;
+  top: .5rem;
+  right: 1.33rem;
+  z-index: 10;
+  opacity: .7;
+  transition-duration: 150ms;
+  padding-right: 1.5rem;
+  user-select: none;
   @media (min-width: 1000px) {
     display: none;
   }
 }
+.mobile-page-title--hidden {
+  transform: translateY(-40px) rotate(-90deg);
+  opacity: 0;
+}
 .menu-button-container {
-  padding: .8vmin 2vmin;
+  user-select: none;
+  display: flex;
+  padding: .4rem .8rem;
   position: fixed;
   top: 0;
   right: 0;
-  font-size: 4vmin;
   z-index: 10;
   @media (min-width: 1000px) {
     display: none;
   }
 }
 .menu-button {
-  width: 2em;
+  width: 2rem;
   opacity: .7;
   transition-duration: 150ms;
   &:hover {
@@ -201,7 +214,7 @@
 .navbar__item {
   @media (max-width: 1000px) {
     padding: .2em 0;
-    font-size: 5vmin;
+    font-size: 6vmin;
   }
 }
 .navbar__link {

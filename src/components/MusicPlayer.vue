@@ -159,6 +159,7 @@
     destroyed() {
       document.onmouseup = null
       document.onkeypress = null
+      window.onkeypress = null
     }
   }
 </script>

@@ -98,25 +98,30 @@
     },
     methods: {
       handleScroll() {
-        let pageBottomPosition = window.scrollY + window.screen.height
-        if (pageBottomPosition > this.pageBottomPositionMax + 50) {
-          let videos = document.getElementsByClassName('embedded-video')
-          let lastLoadedVideoPosition = videos[videos.length - 1].offsetTop
-          if (pageBottomPosition > lastLoadedVideoPosition) this.videoDisplayCount += 2
-          this.pageBottomPositionMax = pageBottomPosition
-        }
+        debounce(() => {
+          let pageBottomPosition = window.scrollY + window.screen.height
+          if (pageBottomPosition > this.pageBottomPositionMax + 50) {
+            let videos = document.getElementsByClassName('embedded-video')
+            let lastLoadedVideoPosition = videos[videos.length - 1].offsetTop
+            if (pageBottomPosition > lastLoadedVideoPosition) this.videoDisplayCount += 2
+            this.pageBottomPositionMax = pageBottomPosition
+          }
+        }, 500)()
       }
     },
     created() {
-      window.addEventListener('scroll', debounce(this.handleScroll, 500))
+      window.addEventListener('scroll', this.handleScroll)
     },
     destroyed() {
-      window.addEventListener('scroll', debounce(this.handleScroll, 500))
+      window.removeEventListener('scroll', this.handleScroll)
     }
   }
 </script>
 <style lang="scss" scoped>
   .video {
     width: 100%;
+    @media (max-width: 1000px) {
+      margin-top: 1rem;
+    }
   }
 </style>

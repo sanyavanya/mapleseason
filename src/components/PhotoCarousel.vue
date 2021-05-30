@@ -72,7 +72,6 @@
 </script>
 <style lang="scss" scoped>
   .photo-carousel-container {
-    /*width: 100%;*/
     display: flex;
     justify-content: center;
     align-items: center;
@@ -81,6 +80,7 @@
     user-select: none;
     max-width: 60vw;
     @media (max-width: 1000px) {
+      margin-top: 2rem;
       max-width: 90vw;
     }
   }

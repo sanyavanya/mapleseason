@@ -129,7 +129,7 @@
     margin: 5rem 7rem;
     @media (max-width: 1000px) {
       margin: 0;
-      padding: 1rem;
+      padding: 2.4rem;
       max-width: none;
       background-color: rgba(0, 0, 0, 0.4);
     }
