@@ -98,6 +98,10 @@
     width: 100%;
     max-width: 350px;
     margin: 0 1.5rem;
+    @media (max-width: 1000px) {
+      max-width: 420px;
+      margin: 0;
+    }
   }
 
   .band-member__name {

@@ -30,6 +30,10 @@
             src: 'https://www.youtube.com/embed/6ki32XAn6as'
           },
           {
+            title: 'Noize MC — Вояджер 1',
+            src: 'https://www.youtube.com/embed/PFvavy6C9BQ'
+          },
+          {
             title: 'Lewis Capaldi — Someone You Loved',
             src: 'https://vk.com/video_ext.php?oid=-70412264&id=456239080&hash=230ddedcc3c744d7&hd=2'
           },

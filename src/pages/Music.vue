@@ -44,10 +44,20 @@
             title: 'Californication',
             artist: 'Red Hot Chili Peppers'
           },
+          // {
+          //   src: 'maple_season_-_fix_you.mp3',
+          //   title: 'Fix You',
+          //   artist: 'Coldplay'
+          // },
           {
-            src: 'maple_season_-_fix_you.mp3',
-            title: 'Fix You',
-            artist: 'Coldplay'
+            src: 'tumanov_-_do_kontsa.mp3',
+            title: 'До конца',
+            artist: 'TUMANOV'
+          },
+          {
+            src: 'tumanov_-_gorod.mp3',
+            title: 'Город',
+            artist: 'TUMANOV'
           },
           {
             src: 'tumanov_-_kto_ty.mp3',
@@ -64,7 +74,6 @@
             title: 'Муза',
             artist: 'TUMANOV'
           }
-          // TODO add the rest of the songs DYNAMICALLY LIKE IN CAROUSEL
         ]
       }
     }

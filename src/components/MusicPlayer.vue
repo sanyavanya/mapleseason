@@ -67,7 +67,7 @@
       }
     },
     methods: {
-      changeSong(index) {
+      changeSong(index) { // TODO laggy on mobile; maybe just
         if (index < 0 || index > this.playlist.length - 1) return
         if (this.selectedSongIndex === index) {
           this.$refs.audio.currentTime = 0
@@ -78,6 +78,8 @@
           }
           return
         }
+        this.$refs.audio.pause()
+        this.$refs.audio.currentTime = 0
         this.selectedSongIndex = index
         this.$refs.audio.onloadeddata = () => {
           this.timeDuration = this.$refs.audio.duration
@@ -98,7 +100,7 @@
           this.playing = false
         }
       },
-      trackMouse(event) {
+      trackMouse(event) { // TODO doesn't work on iPhone
         this.movedFraction = this.calculateMovedFraction(event)
         if (!document.onmousemove) {
           document.onmousemove = (event) => {

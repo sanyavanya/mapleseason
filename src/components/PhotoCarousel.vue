@@ -62,7 +62,7 @@
       }
     },
     mounted() {
-      this.importAll(require.context('../assets/images/carousel/', true, /\.jpg$/))
+      this.importAll(require.context('../assets/images/carousel/', true, /\.jpg$/)) // TODO before all of these load, it doesn't work in Safari on iOS
       window.addEventListener('keydown', this.arrowPress)
     },
     destroyed() {
@@ -80,8 +80,8 @@
     user-select: none;
     max-width: 60vw;
     @media (max-width: 1000px) {
-      margin-top: 2rem;
-      max-width: 90vw;
+      margin-top: 0;
+      max-width: 100vw;
     }
   }
   .photo-carousel__view {
@@ -93,6 +93,8 @@
     margin-bottom: 1.4rem;
     @media (max-width: 1000px) {
       height: 70vh;
+      align-items: flex-start;
+      margin-bottom: .3rem;
     }
   }
   .photo-carousel__view-image {
@@ -123,7 +125,7 @@
     height: 2.5vw;
     @media (max-width: 1000px) {
       height: 30px;
-      margin: 0 1rem;
+      margin: 0 1.5rem;
     }
   }
   .photo-carousel__feed {

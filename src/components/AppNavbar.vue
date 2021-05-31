@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="mobile-page-title" :class="{'mobile-page-title--hidden': mobileMenuOpen || minimized}">{{$route.name}}</div>
+    <div class="mobile-page-title" :class="{'mobile-page-title--hidden': mobileMenuOpen || minimized}" @click="mobileMenuOpen = !mobileMenuOpen">{{$route.name}}</div>
     <div class="menu-button-container" @click="mobileMenuOpen = !mobileMenuOpen">
       <img src="../assets/images/icons/menu.png" class="menu-button" v-if="!mobileMenuOpen">
       <img src="../assets/images/icons/menu_close.png" class="menu-button" v-else>
@@ -150,7 +150,7 @@
 .menu-button-container {
   user-select: none;
   display: flex;
-  padding: .4rem .8rem;
+  padding: .6rem .8rem;
   position: fixed;
   top: 0;
   right: 0;
@@ -160,7 +160,8 @@
   }
 }
 .menu-button {
-  width: 2rem;
+  width: 30px;
+  height: 30px;
   opacity: .7;
   transition-duration: 150ms;
   &:hover {

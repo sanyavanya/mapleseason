@@ -92,6 +92,7 @@
     padding: 0 2rem;
     @media (max-width: 1000px) {
       display: block;
+      padding: 0;
     }
   }
 

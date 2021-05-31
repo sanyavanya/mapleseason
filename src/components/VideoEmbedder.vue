@@ -37,7 +37,7 @@ export default {
     margin: 0 auto 4rem auto;
     max-width: 1200px; // TODO prolly should be adaptive to screens
     @media (max-width: 1000px) {
-      padding: 0 1rem;
+      padding: 0;
     }
   }
   .embedded_video-container {

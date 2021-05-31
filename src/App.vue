@@ -43,16 +43,13 @@ export default {
   body {
     background-color: black; //TODO scss constants: $background_color
     color: white; // TODO scss constants: $text_color SHOULDN'T BE GLOBAL!
-    margin: 0;
+    margin: 0 !important;
   }
 
   .page {
     display: flex;
     justify-content: center;
     width: 100%;
-    @media (max-width: 1000px) {
-      /*margin-top: 10vmin;*/
-    }
   }
 
   .heading {
