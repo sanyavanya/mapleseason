@@ -23,7 +23,8 @@
           <img src="../assets/images/icons/prev.png" class="audio-player__play-icon" @click="changeSong(selectedSongIndex - 1)">
         </button>
         <button class="audio-player__control-button" @click="playPause" ref="playButton">
-          <img src="../assets/images/icons/pause.png" class="audio-player__play-icon" v-if="playing">
+          <img src="../assets/images/icons/loading.png" class="audio-player__play-icon audio-player__play-icon--loading" v-if="loading">
+          <img src="../assets/images/icons/pause.png" class="audio-player__play-icon" v-else-if="playing">
           <img src="../assets/images/icons/play.png" class="audio-player__play-icon" v-else>
         </button>
         <button class="audio-player__control-button">
@@ -48,6 +49,7 @@
     props: ['playlist', 'maxWidth'],
     data() {
       return {
+        loading: true,
         playing: false,
         selectedSongIndex: 0,
         movedFraction: undefined,
@@ -67,29 +69,41 @@
       }
     },
     methods: {
-      changeSong(index) { // TODO laggy on mobile; maybe just
-        if (index < 0 || index >= this.playlist.length) return
+      changeSong(index) {
+        if (index < -1 || index > this.playlist.length) return
+        if (index === -1) index = this.playlist.length - 1
+        if (index === this.playlist.length) index = 0
         const player = this.$refs.audio
         if (this.selectedSongIndex === index) {
           player.currentTime = 0
-          if (player.paused) {
-            player.play()
-            this.playing = true
-          }
+          player.play()
+          this.playing = true
           return
         }
         player.pause()
         this.playing = false // TODO is there no way to avoid this kind of follow-ups?
         player.currentTime = 0
+        this.loading = true
         this.selectedSongIndex = index
         player.onloadeddata = () => {
-          this.timeDuration = player.duration
-          player.play()
-          this.playing = true
+          this.finishLoadingAndSetDuration()
+          this.startPlaying()
+        }
+        player.onprogress = () => {
+          this.finishLoadingAndSetDuration()
+          this.startPlaying()
         }
       },
       getSongSrc(song) {
         return require('../assets/audio/' + song)
+      },
+      finishLoadingAndSetDuration() {
+        this.loading = false
+        this.timeDuration = this.$refs.audio.duration
+      },
+      startPlaying() {
+        this.$refs.audio.play()
+        this.playing = true
       },
       playPause() {
         const player = this.$refs.audio
@@ -115,7 +129,7 @@
           }
         }
       },
-      jumpToClickPos(event) { // TODO maybe optimize after you finish trackMouse()
+      jumpToClickPos(event) {
         document.onmousemove = null
         this.movedFraction = this.calculateMovedFraction(event)
         this.$refs.audio.currentTime = this.movedFraction * this.timeDuration
@@ -136,7 +150,10 @@
       this.smoothScroll = true
       setTimeout(() => $playlistContainer.scrollTop = 0, 200)
       this.$refs.audio.onloadeddata = () => {
-        this.timeDuration = this.$refs.audio.duration
+        this.finishLoadingAndSetDuration()
+      }
+      this.$refs.audio.onprogress = () => {
+        this.finishLoadingAndSetDuration()
       }
       this.$refs.audio.addEventListener('timeupdate', (event) => {
         this.timeCurrent = event.target.currentTime
@@ -224,6 +241,19 @@
     width: 40px;
     &:hover {
       cursor: pointer;
+    }
+  }
+
+  .audio-player__play-icon--loading {
+    animation: rotating 1.5s linear infinite;
+  }
+
+  @keyframes rotating {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(360deg);
     }
   }
 
