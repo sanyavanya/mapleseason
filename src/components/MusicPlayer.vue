@@ -6,7 +6,7 @@
         <div class="audio-player__artist">{{playlist[selectedSongIndex].artist}}</div>
       </div>
       <div class="audio-player__progress">
-        <div class="audio-player__position-container"  ref="positionContainer" @mousedown="trackMouse" @mouseup="jumpToClickPos">
+        <div class="audio-player__position-container"  ref="positionContainer" @mousedown="trackMouse" @mouseup="jumpToClickPos" v-touch:start="trackTouch">
           <div class="audio-player__position-track">
           </div>
           <div class="audio-player__position-played" :style="progressWidth">
@@ -115,6 +115,20 @@
           this.playing = false
         }
       },
+      trackTouch(event) {
+        this.movedFraction = this.calculateMovedFraction(event)
+        if (!document.ontouchmove) {
+          document.ontouchmove = (event) => {
+            this.movedFraction = this.calculateMovedFraction(event)
+            document.ontouchend = () => {
+              this.$refs.audio.currentTime = this.movedFraction * this.$refs.audio.duration
+              setTimeout(() => this.movedFraction = undefined, 500)
+              document.ontouchmove = null
+              document.ontouchend = null
+            }
+          }
+        }
+      },
       trackMouse(event) { // TODO doesn't work on iPhone
         this.movedFraction = this.calculateMovedFraction(event)
         if (!document.onmousemove) {
@@ -138,7 +152,8 @@
       calculateMovedFraction(event) {
         let trackWidth = this.$refs.positionContainer.clientWidth
         let trackLeft = this.$refs.positionContainer.getBoundingClientRect().left
-        let position = (event.pageX - trackLeft) / trackWidth
+        let pageX = event.pageX || event.touches[0].pageX
+        let position = (pageX - trackLeft) / trackWidth
         if (position < 0) position = 0
         if (position > 1) position = 1
         return position

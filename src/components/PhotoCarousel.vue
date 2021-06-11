@@ -1,7 +1,7 @@
 <template>
   <div class="photo-carousel-container">
     <div class="photo-carousel">
-      <div class="photo-carousel__view">
+      <div class="photo-carousel__view" v-touch:swipe="handleSwipe">
         <div class="photo-carousel__view-button-container photo-carousel__view-button-container--left" @click="changeImage(selectedIndex - 1)" v-if="selectedIndex > 0">
           <img src="../assets/images/icons/image_prev.png" class="photo-carousel__view-button">
         </div>
@@ -37,6 +37,10 @@
     methods: {
       importAll(r) {
         r.keys().forEach(key => (this.images.push(r(key)))) // TODO do the same for audio
+      },
+      handleSwipe(event) {
+        if (event === 'left') this.changeImage(this.selectedIndex + 1)
+        if (event === 'right') this.changeImage(this.selectedIndex - 1)
       },
       changeImage(index) {
         if (index < 0 || index > this.images.length - 1 || index === this.selectedIndex) return
@@ -93,7 +97,6 @@
     margin-bottom: 1.4rem;
     @media (max-width: 1000px) {
       height: 70vh;
-      align-items: flex-start;
       margin-bottom: .3rem;
     }
   }
