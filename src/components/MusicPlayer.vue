@@ -68,22 +68,23 @@
     },
     methods: {
       changeSong(index) { // TODO laggy on mobile; maybe just
-        if (index < 0 || index > this.playlist.length - 1) return
+        if (index < 0 || index >= this.playlist.length) return
+        const player = this.$refs.audio
         if (this.selectedSongIndex === index) {
-          this.$refs.audio.currentTime = 0
-          const player = this.$refs.audio
+          player.currentTime = 0
           if (player.paused) {
             player.play()
             this.playing = true
           }
           return
         }
-        this.$refs.audio.pause()
-        this.$refs.audio.currentTime = 0
+        player.pause()
+        this.playing = false // TODO is there no way to avoid this kind of follow-ups?
+        player.currentTime = 0
         this.selectedSongIndex = index
-        this.$refs.audio.onloadeddata = () => {
-          this.timeDuration = this.$refs.audio.duration
-          this.$refs.audio.play()
+        player.onloadeddata = () => {
+          this.timeDuration = player.duration
+          player.play()
           this.playing = true
         }
       },
