@@ -92,6 +92,7 @@
         player.onprogress = () => {
           this.finishLoadingAndSetDuration()
           this.startPlaying()
+          this.$refs.audio.onprogress = null
         }
       },
       getSongSrc(song) {
@@ -169,6 +170,7 @@
       }
       this.$refs.audio.onprogress = () => {
         this.finishLoadingAndSetDuration()
+        this.$refs.audio.onprogress = null
       }
       this.$refs.audio.addEventListener('timeupdate', (event) => {
         this.timeCurrent = event.target.currentTime
