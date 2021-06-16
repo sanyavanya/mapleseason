@@ -88,11 +88,12 @@
         player.onloadeddata = () => {
           this.finishLoadingAndSetDuration()
           this.startPlaying()
+          player.onloadeddata = null
         }
         player.onprogress = () => {
           this.finishLoadingAndSetDuration()
           this.startPlaying()
-          this.$refs.audio.onprogress = null
+          player.onprogress = null
         }
       },
       getSongSrc(song) {
@@ -119,7 +120,7 @@
       trackTouch(event) {
         this.movedFraction = this.calculateMovedFraction(event)
         if (!document.ontouchmove) {
-          document.ontouchmove = (event) => {
+          document.ontouchmove = event => {
             this.movedFraction = this.calculateMovedFraction(event)
             document.ontouchend = () => {
               this.$refs.audio.currentTime = this.movedFraction * this.$refs.audio.duration
@@ -130,10 +131,10 @@
           }
         }
       },
-      trackMouse(event) { // TODO doesn't work on iPhone
+      trackMouse(event) {
         this.movedFraction = this.calculateMovedFraction(event)
         if (!document.onmousemove) {
-          document.onmousemove = (event) => {
+          document.onmousemove = event => {
             this.movedFraction = this.calculateMovedFraction(event)
             document.onmouseup = () => {
               this.$refs.audio.currentTime = this.movedFraction * this.$refs.audio.duration
@@ -165,16 +166,18 @@
       $playlistContainer.scrollTop = $playlistContainer.clientHeight
       this.smoothScroll = true
       setTimeout(() => $playlistContainer.scrollTop = 0, 200)
-      this.$refs.audio.onloadeddata = () => {
+      let player = this.$refs.audio
+      player.onloadeddata = () => {
         this.finishLoadingAndSetDuration()
+        player.onloadeddata = null
       }
-      this.$refs.audio.onprogress = () => {
+      player.onprogress = () => {
         this.finishLoadingAndSetDuration()
-        this.$refs.audio.onprogress = null
+        player.onprogress = null
       }
-      this.$refs.audio.addEventListener('timeupdate', (event) => {
+      player.ontimeupdate = event => {
         this.timeCurrent = event.target.currentTime
-      })
+      }
       document.onmouseup = () => {
         document.onmousemove = null
       }
@@ -184,14 +187,22 @@
       this.$refs.playButton.onblur = () => {
         this.playButtonFocused = false
       }
-      document.onkeypress = (event) => {
+      document.onkeypress = event => {
         if (!this.playButtonFocused && event.code === 'Space') this.playPause()
       }
-      window.onkeypress = (event) => {
+      window.onkeypress = event => {
         if (event.code === 'Space' && event.target == document.body) {
           event.preventDefault()
         }
       }
+    },
+    beforeDestroy() {
+      let player = this.$refs.audio
+      player.onloadeddata = null
+      player.onprogress = null
+      player.ontimeupdate = null
+      this.$refs.playButton.onfocus = null
+      this.$refs.playButton.onblur = null
     },
     destroyed() {
       document.onmouseup = null

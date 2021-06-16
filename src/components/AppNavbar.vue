@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="app-navbar">
     <div class="mobile-page-title" :class="{'mobile-page-title--hidden': mobileMenuOpen || minimized}" @click="mobileMenuOpen = !mobileMenuOpen">{{$route.name}}</div>
     <div class="menu-button-container" @click="mobileMenuOpen = !mobileMenuOpen">
       <img src="../assets/images/icons/menu.png" class="menu-button" v-if="!mobileMenuOpen">
@@ -101,25 +101,39 @@
       setMinified() {  
         let breakpoint = this.minimized ? this.breakpointMinimize : this.breakpointMaximize
         this.minimized = window.scrollY >= breakpoint
+      },
+      closeMobileMenu() {
+        this.mobileMenuOpen = false
       }
     },
     mounted() {
       this.setMinified()
-      window.addEventListener('scroll', this.setMinified)
-      window.addEventListener('resize', () => {
+      window.onscroll = this.setMinified
+      window.onresize = () => {
         if (this.mobileMenuOpen)
           if (document.body.clientWidth >= 1000) {
             this.mobileMenuOpen = false
           }
-      })
-      const navbarItems = document.getElementsByClassName('navbar__item')
-      for (let item of navbarItems) {
-        item.addEventListener('click', () => this.mobileMenuOpen = false)
+      }
+      for (let item of document.getElementsByClassName('navbar__item')) {
+        item.addEventListener('click', this.closeMobileMenu)
+      }
+    },
+    destroyed() {
+      window.onscroll = null
+      window.onresize = null
+      for (let item of document.getElementsByClassName('navbar__item')) {
+        item.removeEventListener('click', this.closeMobileMenu)
       }
     }
   }
 </script>
 <style lang="scss" scoped>
+.app-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
 .mobile-page-title {
   transform-origin: bottom right;
   text-align: center;
@@ -173,9 +187,6 @@
   opacity: 1;
   display: flex;
   justify-content: center;
-  position: sticky;
-  top: 0;
-  z-index: 1;
   background-color: black; //TODO scss constants: $background_color
 }
 .navbar {
