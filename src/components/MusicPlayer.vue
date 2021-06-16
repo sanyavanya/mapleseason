@@ -80,8 +80,7 @@
           this.playing = true
           return
         }
-        player.pause()
-        this.playing = false // TODO is there no way to avoid this kind of follow-ups?
+        this.playPause()
         player.currentTime = 0
         this.loading = true
         this.selectedSongIndex = index
