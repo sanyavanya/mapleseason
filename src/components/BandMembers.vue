@@ -37,18 +37,18 @@
             instagramHandle: 'tumanov_music'
           },
           {
-            photo: 'sodomovsky.jpg',
-            name: 'Никита Содомовский',
-            role: 'Электрогитара, бэк-вокал',
-            vkHandle: 'sodomovskiy',
-            instagramHandle: 'sodomovskiy'
-          },
-          {
             photo: 'kalinin.jpg',
             name: 'Станислав Калинин',
             role: 'Барабаны',
             vkHandle: 'kalinin_drums',
             instagramHandle: 'stanvave'
+          },
+          {
+            photo: 'sodomovsky.jpg',
+            name: 'Никита Содомовский',
+            role: 'Электрогитара, бэк-вокал',
+            vkHandle: 'sodomovskiy',
+            instagramHandle: 'sodomovskiy'
           },
           {
             photo: 'pungin.jpg',

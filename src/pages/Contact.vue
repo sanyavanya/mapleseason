@@ -2,8 +2,8 @@
   <div class="contact">
     <div class="hero">
       <div class="hero__text">
-        <p class="hero__text-block">Группа Maple&nbsp;Season выступает на&nbsp;публичных, корпоративных и частных мероприятиях: фестивали, презентации, церемонии открытия и награждения, музыкальные вечера в&nbsp;публичных заведениях, свадьбы, корпоративные вечеринки, дни рождения и юбилеи.</p>
-        <p class="hero__text-block">Техническое обеспечение выступления осуществляется согласно райдеру группы. Артисты могут подготовить и исполнить одну или несколько композиций по&nbsp;предварительной договоренности с&nbsp;заказчиком.</p>
+        <p class="hero__text-block text-with-shadow">Группа Maple&nbsp;Season выступает на&nbsp;публичных, корпоративных и частных мероприятиях: фестивали, презентации, церемонии открытия и награждения, музыкальные вечера в&nbsp;публичных заведениях, свадьбы, корпоративные вечеринки, дни рождения и юбилеи.</p>
+        <p class="hero__text-block text-with-shadow">Техническое обеспечение выступления осуществляется согласно райдеру группы. Артисты могут подготовить и исполнить одну или несколько композиций по&nbsp;предварительной договоренности с&nbsp;заказчиком.</p>
         <div class="icon-link-group">
           <a href="https://drive.google.com/open?id=1qRhVtTwJ0JsbtEum-Lt3kZbqHsb1QT_O" class="icon-link icon-link--telegram">
             <img src="../assets/images/icons/download.png" alt="download" class="app-icon-link__icon app-icon-link__icon--small">
@@ -18,7 +18,7 @@
             <span>Репертуар</span>
           </a>
         </div>
-        <p class="hero__text-block">Для организации выступления группы нужно связаться с&nbsp;Евгением любым удобным способом:</p>
+        <p class="hero__text-block text-with-shadow">Для организации выступления группы нужно связаться с&nbsp;Евгением любым удобным способом:</p>
         <div class="icon-link-group">
           <a href="https://vk.com/vsetruba" class="icon-link icon-link--vk">
             <img src="../assets/images/icons/contact_vk.png" alt="vk" class="app-icon-link__icon app-icon-link__icon--small">
@@ -136,7 +136,7 @@
     }
   }
 
-  .hero__text-block { // TODO this ALMOST is a copy from HomeAbout
+  .hero__text-block text-with-shadow { // TODO this ALMOST is a copy from HomeAbout
     margin-block-start: 1rem;
     margin-block-end: 1rem;
     text-align: center;

@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <VideoEmbedder src="https://www.youtube.com/embed/g99nKpefMfA" :customRatio="43" />
+    <VideoEmbedder src="https://www.youtube.com/embed/3xqy-yas5Dc" :customRatio="56.3" />
     <HomeAbout />
     <BandMembers />
     <ContactFooter />

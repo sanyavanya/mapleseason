@@ -25,9 +25,9 @@
             artist: 'Валерий Меладзе и гр. Виа Гра'
           },
           {
-            src: 'maple_season_-_aeroplan.mp3',
-            title: 'Аэроплан',
-            artist: 'Братья Грим'
+            src: 'maple_season_-_eto_vsyo.mp3',
+            title: 'Это всё',
+            artist: 'ДДТ'
           },
           {
             src: 'maple_season_-_vesna.mp3',
@@ -35,9 +35,19 @@
             artist: '5’Nizza'
           },
           {
+            src: 'maple_season_-_aeroplan.mp3',
+            title: 'Аэроплан',
+            artist: 'Братья Грим'
+          },
+          {
             src: 'maple_season_-_letet.mp3',
             title: 'Лететь',
             artist: 'Амега'
+          },
+          {
+            src: 'maple_season_-_someone_you_loved.mp3',
+            title: 'Someone You Loved',
+            artist: 'Lewis Capaldi'
           },
           {
             src: 'maple_season_-_californication.mp3',
@@ -49,6 +59,11 @@
           //   title: 'Fix You',
           //   artist: 'Coldplay'
           // },
+          {
+            src: 'tumanov_-_plato.mp3',
+            title: 'Плато',
+            artist: 'TUMANOV'
+          },
           {
             src: 'tumanov_-_do_kontsa.mp3',
             title: 'До конца',
@@ -89,6 +104,6 @@
     background-image: url("../assets/images/photos/music.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: 90% 50%;
+    background-position: 90% 40%;
   }
 </style>

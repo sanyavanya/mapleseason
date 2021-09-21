@@ -1,11 +1,11 @@
 <template>
   <div class="repertoire-container">
-    <div class="repertoire">
+    <div class="repertoire parallax">
       <div class="repertoire__lists">
         <div class="repertoire__list-container">
           <div class="repertoire__list"><!-- TODO: name keys properly, maybe like BEM -->
-            <h2 class="heading">Танцевальные</h2>
-            <ul class="repertoire__songs">
+            <h2 class="heading text-with-shadow">Танцевальные</h2>
+            <ul class="repertoire__songs text-with-shadow">
               <li v-for="song in repertoire['dance']" :key="'repertoire__dance-song--' + song" class="repertoire__song">
                 {{song}}
               </li>
@@ -14,16 +14,16 @@
         </div>
         <div class="repertoire__list-container">
           <div class="repertoire__list"><!-- TODO: name keys properly, maybe like BEM -->
-            <h2 class="heading">Умеренные и лирические</h2>
-            <ul class="repertoire__songs">
+            <h2 class="heading text-with-shadow">Умеренные и лирические</h2>
+            <ul class="repertoire__songs text-with-shadow">
               <li v-for="song in repertoire['calm']" :key="'repertoire__dance-song--' + song" class="repertoire__song">
                 {{song}}
               </li>
             </ul>
           </div>
           <div class="repertoire__list"><!-- TODO: name keys properly, maybe like BEM -->
-            <h2 class="heading">Авторские</h2>
-            <ul class="repertoire__songs">
+            <h2 class="heading text-with-shadow">Авторские</h2>
+            <ul class="repertoire__songs text-with-shadow">
               <li v-for="song in repertoire['self']" :key="'repertoire__dance-song--' + song" class="repertoire__song">
                 {{song}}
               </li>
@@ -31,7 +31,7 @@
           </div>
         </div>
       </div>
-      <p class="repertoire__footer">
+      <p class="repertoire__footer text-with-shadow">
         Наиболее актуальный репертуар группы всегда доступен по <a href="https://drive.google.com/open?id=1vycwEOIRNxAyVxBXVwKMGAgj2weNK8q0" class="inline-link">ссылке</a>.
       </p>
     </div>
@@ -153,6 +153,8 @@ TUMANOV — Пой Мне`
     justify-content: center;
   }
   .repertoire {
+    background-image: url("../assets/images/photos/repertoire.jpg");
+    background-position: 0% 50%;
     max-width: 1600px;
     width: 100%;
     display: flex;

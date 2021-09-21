@@ -26,6 +26,11 @@
         videoDisplayCount: 2,
         videos: [
           {
+            title: 'The Weeknd — Blinding Lights',
+            src: 'https://www.youtube.com/embed/3xqy-yas5Dc',
+            ratio: 56.3 // TODO specify ratios for every video and pass it as props
+          },
+          {
             title: 'Сюрприз на 35 лет',
             src: 'https://www.youtube.com/embed/6ki32XAn6as'
           },
@@ -34,8 +39,20 @@
             src: 'https://www.youtube.com/embed/PFvavy6C9BQ'
           },
           {
+            title: 'Bruno Mars — Locked Out of Heaven',
+            src: 'https://www.youtube.com/embed/LLgqPXH7tHY'
+          },
+          {
             title: 'Lewis Capaldi — Someone You Loved',
             src: 'https://vk.com/video_ext.php?oid=-70412264&id=456239080&hash=230ddedcc3c744d7&hd=2'
+          },
+          {
+            title: 'Hi-Fi — Седьмой лепесток',
+            src: 'https://www.youtube.com/embed/8PCXjMfusOY'
+          },
+          {
+            title: 'ДДТ — Это всё',
+            src: 'https://www.youtube.com/embed/F74Wr3jmAY8'
           },
           {
             title: 'TUMANOV – До конца | Art Music Park',
@@ -50,16 +67,16 @@
             src: 'https://vk.com/video_ext.php?oid=-188578502&id=456239056&hash=4cee27ddab20c23b&hd=2'
           },
           {
+            title: 'Амега — Лететь',
+            src: 'https://www.youtube.com/embed/HjYx0uF0SFA'
+          },
+          {
             title: 'The Weeknd – Blinding Lights (карантинный кавер)',
             src: 'https://vk.com/video_ext.php?oid=-70412264&id=456239055&hash=63d9a14e189b74e6&hd=2'
           },
           {
             title: 'Rihanna – Umbrella',
             src: 'https://vk.com/video_ext.php?oid=-70412264&id=456239054&hash=8d4dd9763428728d&hd=2'
-          },
-          {
-            title: 'Live на фестивале «Высота»',
-            src: 'https://vk.com/video_ext.php?oid=-70412264&id=456239036&hash=13f3d64958892580'
           },
           {
             title: 'TUMANOV – Кто ты | Онлайн-выпускной 2020',

@@ -3,19 +3,19 @@
     <h2 class="heading">Кавер-группа Maple Season</h2><!-- TODO style headers, _T() -->
     <div class="about parallax">
       <div class="about__text-container">
-        <p class="about__text">
+        <p class="about__text text-with-shadow">
           Весной 2014 года Женя и Саша подготовили небольшую концертную программу из&nbsp;популярных песен,
           которые им нравились&nbsp;— так появился кавер-дуэт Maple&nbsp;Season.
           Группа начала играть в&nbsp;уютных заведениях и выступать на&nbsp;Большой Покровской, главной пешеходной улице Нижнего.
           Ребята славились исполнением красивых лирических композиций и&nbsp;тёплой атмосферой на&nbsp;концертах.
         </p>
-        <p class="about__text">
+        <p class="about__text text-with-shadow">
           К концу года к&nbsp;группе присоединились барабанщик и басист, и ребята начали качать танцполы.
           Maple&nbsp;Season стали регулярно выступать на&nbsp;корпоративах и&nbsp;свадьбах, на&nbsp;пикниках и&nbsp;теплоходах, на&nbsp;небольших квартирниках и&nbsp;крупных фестивалях.
           <router-link to="/repertoire" class="inline-link">Репертуар</router-link> группы
           состоит из&nbsp;популярных русско- и&nbsp;англоязычных песен XXI&nbsp;века и&nbsp;дюжины бессмертных хитов прошлого столетия.
         </p>
-        <p class="about__text">
+        <p class="about__text text-with-shadow">
           В&nbsp;конце 2019 года ребята начали выпускать авторские песни в&nbsp;рамках проекта <a class="inline-link" href="https://vk.com/tumanovband"><!-- TODO keep links in store or mixin or something -->TUMANOV</a>.
         </p>
       </div>
