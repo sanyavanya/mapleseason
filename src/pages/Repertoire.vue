@@ -32,7 +32,7 @@
         </div>
       </div>
       <p class="repertoire__footer text-with-shadow">
-        Наиболее актуальный репертуар группы всегда доступен по <a href="https://drive.google.com/open?id=1vycwEOIRNxAyVxBXVwKMGAgj2weNK8q0" class="inline-link">ссылке</a>.
+        Наиболее актуальный репертуар группы всегда доступен по <a href="https://docs.google.com/document/d/1vycwEOIRNxAyVxBXVwKMGAgj2weNK8q0/edit?usp=sharing&ouid=106022738356700358415&rtpof=true&sd=true" class="inline-link">ссылке</a>.
       </p>
     </div>
   </div>
@@ -57,30 +57,26 @@
           }
         ],
         repertoireStringLiterals: {// TODO read from file, ideally from Google Drive document
-          dance: `A-Ha — Take on Me
+          dance: `A-Ha — Take On Me
 Alice Merton — No Roots
 Animal Джаz — Три Полоски
-Ava Max — Sweet But Psycho
 Blur — Song 2
 Bruno Mars — Locked Out of Heaven
 Bruno Mars — Runaway Baby
 Coldplay — Adventure of a Lifetime
-Coldplay — Yellow
-Chumbawamba — Tubthumping
-DNCE — Kissing Strangers
+Cream Soda — Никаких Больше Вечеринок
+Dabro — Юность
 Ed Sheeran — Shape of You
 Ed Sheeran — I Don’t Care (feat. Justin Bieber)
-Kaiser Chiefs — Ruby
-Maroon 5 — Misery
 Maroon 5 — This Love
 Mojo — Lady + Daft Punk — Get Lucky
-Ottawan — Hands Up + Haddaway — What is Love
+Nothing but Theaves — Amsterdam
+Ottawan — Hands Up + Haddaway — What Is Love
 Red Hot Chili Peppers — Can’t Stop
 Red Hot Chili Peppers — Dani California
-Smash Mouth — All Star
-Spice Girls — Wannabe
 The Weeknd — Blinding Lights
 Walk the Moon — Shut Up and Dance
+Андрей Губин — Зима-Холода
 Базиль — Ай-яй-я
 Браво — Любите, девушки
 Братья Грим — Кустурица
@@ -89,30 +85,30 @@ Walk the Moon — Shut Up and Dance
 Градусы — Кто Ты
 Звери — Районы-кварталы
 Звери — Танцуй
-Песня Деда Мороза и Снегурочки (из м/ф «Ну, погоди!»)
-Ленинград — Рыба
+Иван Дорн — Ненавижу
+Клара Румянова и Анатолий Папанов — Песня Деда Мороза и Снегурочки (из м/ф «Ну, погоди!»)
+Мумий Тролль — Невеста
 Руки Вверх — 18 мне уже
 Серебро — Между нами любовь
-Иван Дорн — Ненавижу
-Иван Дорн — Стыцамэн
-Мумий Тролль — Невеста
 Чайф — 17 лет (Пусть всё будет так, как ты захочешь)
-Hi-Fi — Седьмой Лепесток`,
-          calm: `Adele — Rolling in the Deep
+Шура — Ты не верь слезам
+Hi-Fi — Седьмой лепесток`,
+          calm: `Adam Lambert — Whattaya Want From Me
+Adele — Rolling in the Deep
 Capital Cities — Safe & Sound
 Coldplay — Amazing Day
 Coldplay — The Scientist
+Ed Sheeran — Bad Habits
 Ed Sheeran — Perfect
 James Blunt — You’re Beautiful
 John Lennon — Stand By Me
 Limp Bizkit — Behind Blue Eyes
 Linkin Park — One More Light
 Maroon 5 — She Will Be Loved
-Noize MC — Вояджер 1
+NoizeMC — Вояджер 1
+Nothing but Theaves — Sorry
 Red Hot Chili Peppers — Californication
 Rihanna — Umbrella
-Sam Smith — I’m Not the Only One
-System of a Down — Lonely Day
 Twenty One Pilots — Heathens
 Амега — Лететь
 Баста — Сансара
@@ -120,17 +116,19 @@ Twenty One Pilots — Heathens
 Бумбокс — Вахтёрам
 Группа Пицца — Пятница
 ДДТ — Это Всё
-Николай Носков — Это Здорово
-Земфира — П. М. М. Л.
+Земфира — П.М.М.Л.
 Звери — Напитки покрепче
-Мумий Тролль — Малыш
+Михей и Джуманджи - Сука-любовь
+Леонид Агутин — Аэропорты
+Николай Носков — Это здорово
 Отпетые Мошенники — Люби меня, люби
 5’nizza — Весна`,
           self: `TUMANOV — Город
-TUMANOV — До Конца
-TUMANOV — Кто Ты
+TUMANOV — До конца
+TUMANOV — Кто ты
 TUMANOV — Муза
-TUMANOV — Пой Мне`
+TUMANOV — Плато
+TUMANOV — Пой мне`
         }
       }
     },
