@@ -1,46 +1,45 @@
-import Home from './pages/Home'
-import Photo from './pages/Photo'
-import Video from './pages/Video'
-import Music from './pages/Music'
-import Repertoire from './pages/Repertoire'
-import Contact from './pages/Contact'
-import NotFound from './pages/NotFound'
+import Home from './pages/Home';
+import Photo from './pages/Photo';
+import Video from './pages/Video';
+import Music from './pages/Music';
+import Repertoire from './pages/Repertoire';
+import Contact from './pages/Contact';
+import NotFound from './pages/NotFound';
 
 export const routes = [
   {
     path: '',
     name: '',
-    component: Home
+    component: Home,
   },
   {
     path: '/photo',
     name: 'Фото',
-    component: Photo
+    component: Photo,
   },
   {
     path: '/video',
     name: 'Видео',
-    component: Video
+    component: Video,
   },
   {
     path: '/music',
     name: 'Музыка',
-    component: Music
+    component: Music,
   },
   {
     path: '/repertoire',
     name: 'Репертуар',
-    component: Repertoire
+    component: Repertoire,
   },
   {
     path: '/contact',
     name: 'Организация выступлений',
-    component: Contact
+    component: Contact,
   },
   {
     path: '*',
     name: 'Четыреста четыре',
-    component: NotFound
-  }
-]
-  
+    component: NotFound,
+  },
+];

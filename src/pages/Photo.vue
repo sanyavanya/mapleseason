@@ -1,13 +1,13 @@
 <template>
-    <PhotoCarousel />
+  <PhotoCarousel />
 </template>
 <script>
-  import PhotoCarousel from "../components/PhotoCarousel"
+import PhotoCarousel from '../components/PhotoCarousel';
 
-  export default {
-    name: 'Photo',
-    components: {
-      PhotoCarousel
-    }
-  }
+export default {
+  name: 'Photo',
+  components: {
+    PhotoCarousel,
+  },
+};
 </script>
