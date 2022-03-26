@@ -105,12 +105,6 @@ export default {
           iconColored: 'button_vk_colored.png',
         },
         {
-          name: 'instagram',
-          href: 'https://instagram.com/mapleseason_band',
-          iconWhite: 'button_instagram_white.png',
-          iconColored: 'button_instagram_colored.png',
-        },
-        {
           name: 'youtube',
           href: 'https://youtube.com/channel/UClXQ5ALVlfEMJ-PyUM3ISmA',
           iconWhite: 'button_youtube_white.png',

@@ -30,7 +30,6 @@
     </div>
     <AppSocialButtons
       vk="https://vk.com/mapleseason"
-      in="https://instagram.com/mapleseason_band"
       yt="https://youtube.com/channel/UClXQ5ALVlfEMJ-PyUM3ISmA"
       :buttonSize="3"
       buttonSizeUnit="rem"

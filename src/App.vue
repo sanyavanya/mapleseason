@@ -4,20 +4,17 @@
     <div class="page">
       <router-view />
     </div>
-    <AppFooter />
   </div>
 </template>
 
 <script>
 import AppNavbar from './components/AppNavbar';
-import AppFooter from './components/AppFooter';
 // TODO check console for warnings
 
 export default {
   name: 'App', //TODO rename?
   components: {
     AppNavbar,
-    AppFooter,
   },
 };
 </script>

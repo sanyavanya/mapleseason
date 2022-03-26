@@ -17,7 +17,6 @@
           <p class="band-member__role">{{ bandMember.role }}</p>
           <AppSocialButtons
             :vk="'https://www.vk.com/' + bandMember.vkHandle"
-            :in="'https://www.instagram.com/' + bandMember.instagramHandle"
             :buttonSize="1.5"
             buttonSizeUnit="rem"
           />
@@ -42,28 +41,24 @@ export default {
           name: 'Евгений Туманов',
           role: 'Вокал, гитара',
           vkHandle: 'vsetruba',
-          instagramHandle: 'tumanov_music',
         },
         {
           photo: 'kalinin.jpg',
           name: 'Станислав Калинин',
           role: 'Барабаны',
           vkHandle: 'kalinin_drums',
-          instagramHandle: 'stanvave',
         },
         {
           photo: 'sodomovsky.jpg',
           name: 'Никита Содомовский',
           role: 'Электрогитара, бэк-вокал',
           vkHandle: 'sodomovskiy',
-          instagramHandle: 'sodomovskiy',
         },
         {
           photo: 'pungin.jpg',
           name: 'Александр Пунгин',
           role: 'Бас-гитара',
           vkHandle: 'pungaboy',
-          instagramHandle: '_pungaboy_',
         },
       ],
     };

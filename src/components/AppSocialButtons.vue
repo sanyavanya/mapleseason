@@ -28,7 +28,6 @@ export default {
   props: {
     //TODO strict type check for all props everywhere
     vk: String,
-    in: String,
     yt: String,
     buttonSize: Number,
     buttonSizeUnit: String,
@@ -37,7 +36,6 @@ export default {
     return {
       icons: {
         vk: 'button_vk_filled.png',
-        in: 'button_instagram_colored.png',
         yt: 'button_youtube_colored.png',
       },
     };
